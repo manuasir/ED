@@ -152,6 +152,8 @@ plot 'tiempos\_burbuja.dat' axes x1y1, (x*x-x)/2 axes x2y2
 	\caption{Puede decirse que la eficiencia empírica se ajusta a la eficiencia teórica.} 
 \end{figure}
 
+Fue necesario ajustar los límites de la función f(x) debido a los bajos tiempos de ejecución provocaban que la visualización se distorsionase al verse de forma horizontal, condicionados por los altos valores de f(x) y estar ambas compartiendo los ejes.
+
 \section{ Ejercicio 2: Ajuste en la ordenación de la burbuja}
 
 Se realizaron los siguientes comandos de gnuplot:
@@ -161,8 +163,7 @@ f(x) = (a*x)**2 + b*x + c
 fit f(x) "tiempos_burbuja.dat" via a, b, c
 \end{lstlisting}
 
-Tras lo cual se generó un fichero 'fit.log':
-
+Tras lo cual se generó un fichero 'fit.log', el cual proporciona la información extraída de la interpolación por mínimos cuadrados:
 
 \begin{lstlisting}
 Thu Sep 28 20:31:15 2017
@@ -200,6 +201,13 @@ b              -0.968  1.000
 c               0.738 -0.861  1.000 
 \end{lstlisting}
 
+De estos datos se extrae que: 
+\[
+f(n) = 2.84192^{-9}n^2 -3.2422^{-6}n + 0.000943581
+\]
+
+Al realizar el ajuste se obtiene el siguiente gráfico:
+
 \begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
 	\centering
 	\label{lsblk}
@@ -218,7 +226,7 @@ En el peor caso el vector puede dividirse tantas veces como subconjuntos de mita
 \begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
 	\centering
 	\label{lsblk}
-	\includegraphics[width=0.8\textwidth]{../imgs/c3.PNG}
+	\includegraphics[width=0.8\textwidth]{../imgs/ej3logteoric.PNG}
 	\caption{Eficiencia teórica} 
 \end{figure}
 
@@ -244,6 +252,7 @@ Como se aprecia en la gráfica hay una anomalía en la representación, ya que e
 \end{figure}
 
 El ajuste por regresión resultó de la siguiente manera:
+
 
 
 \section{Ejercicio 4:  Mejor y peor caso}
@@ -284,7 +293,7 @@ La representación de los tres escenarios:
 
 \section{Ejercicio 5}
 
-Al introducir el cambio y encontrarse el vector ya ordenado, el algoritmo entra únicamente en la primera iteración al bucle exterior, recorriendo el bucle interior de forma completa una sola vez. Por tanto se trata de una eficiencia lineal $O(n)$ cuando el vector ya está ordenado.
+Al introducir el cambio y encontrarse el vector ya ordenado, el algoritmo entra únicamente en la primera iteración al bucle exterior, recorriendo el bucle interior de forma completa una sola vez. Por tanto se trata de una eficiencia lineal $O(n)$.
 
 \begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
 	\centering
