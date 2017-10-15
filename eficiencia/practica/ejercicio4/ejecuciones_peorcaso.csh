@@ -1,9 +1,9 @@
 #!/bin/csh
-@ inicio = 100000
-@ fin = 128500
-@ incremento = 500
+@ inicio = 100
+@ fin = 49500
+@ incremento = 100
 set ejecutable = burbuja
-set salida = peorcaso.dat
+set salida = peorrcaso.dat
 
 @ i = $inicio
 echo > $salida

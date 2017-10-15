@@ -1,7 +1,7 @@
 #!/bin/csh
-@ inicio = 100000
-@ fin = 128500
-@ incremento = 500
+@ inicio = 100
+@ fin = 1000000
+@ incremento = 100
 set ejecutable = burbuja
 set salida = mejorcaso.dat
 

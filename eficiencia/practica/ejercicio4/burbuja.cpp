@@ -5,12 +5,12 @@ using namespace std;
 
 void ordenar(int *v, int n) {
 	for (int i=0; i<n-1; i++)
-	for (int j=0; j<n-i-1; j++)
-	if (v[j]>v[j+1]) {
-	int aux = v[j];
-	v[j] = v[j+1];
-	v[j+1] = aux;
-	}
+		for (int j=0; j<n-i-1; j++)
+			if (v[j]>v[j+1]) {
+				int aux = v[j];
+				v[j] = v[j+1];
+				v[j+1] = aux;
+			}
 }
 void sintaxis()
 {
@@ -34,12 +34,14 @@ if (argc!=4)
 	int *v=new int[tam];       // Reserva de memoria
 	srand(time(0));            // Inicialización del generador de números pseudoaleatorios
 	// mejor caso
-	if(opcion = 1)
+	if(opcion == 1){
 		for (int i=0; i<tam; i++)  // Recorrer vector
 			v[i] = i;    // Generar aleatorio [0,vmax[
-	else // peor caso
+	}
+	else {
 		for (int i=tam-1; i>=0; i--)  // Recorrer vector
 			v[i] = i;    // Generar aleatorio [0,vmax[
+	}
 	clock_t tini;    // Anotamos el tiempo de inicio
 	tini=clock();
 
