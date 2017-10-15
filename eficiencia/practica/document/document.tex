@@ -97,9 +97,18 @@
 
 \maketitle % Muestra el Título
 
+Esta práctica se ha realizado en un equipo de siguientes prestaciones:
+\begin{itemize}  
+	\item 24 GB de Memoria RAM DDR3 
+	\item Procesador Intel Core i7-2600 @ 3.40 Ghz
+	\item Entorno en una máquina virtual bajo GNU/Linux: Ubuntu 16.04
+\end{itemize}
+
+Todos los códigos fuente de los ejercicios abajo descritos se proporcionan en un directorio adjunto, así como cualquier script o imagen que se ha utilizado.
+
 \section{Ejercicio 1: Ordenación de la burbuja}
 
-La eficiencia teórica de este algoritmo es de clasificación cuadrática: \[ \dfrac{ n^2 - n}{2} \]
+Al tratarse de dos bucles anidados en función de N, puede hablarse de que la eficiencia teórica de este algoritmo es de clasificación cuadrática: \[ \dfrac{ n^2 - n}{2} \]
 En notación O (peor caso): $O(n^2)$ % regular O
 
 Para automatizar la ejecución del algoritmo se preparó un script que invoca el programa compilado con parámetros incrementales.
@@ -237,59 +246,72 @@ Para medir los tiempos empíricos de este algoritmo se ha realizado un script co
 \begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
 	\centering
 	\label{lsblk}
-	\includegraphics[width=0.8\textwidth]{../imgs/c3.PNG}
+	\includegraphics[width=0.8\textwidth]{../imgs/ejercicio3b.PNG}
 	\caption{Eficiencia empírica} 
 \end{figure}
 
-Como se aprecia en la gráfica hay una anomalía en la representación, ya que eventualmente los tiempos se disparan de forma muy irregular. Esto es debido a que en la implementación no se tiene en cuenta que 
-,por tanto, una vez corregido el problema se volvió a realizar el estudio empírico de los tiempos obteniendo el siguiente resultado:
+Como se aprecia en la gráfica hay una anomalía en la representación, ya que eventualmente los tiempos se disparan de forma muy irregular.
+Tras realizar los siguientes comandos en gnuplot el ajuste por regresión resultó de la siguiente manera:
+
+\begin{lstlisting}
+gnuplot> f(x) = a*x**2 + b*x + c
+gnuplot> fit f(x) 't.txt' via a,b,c
+\end{lstlisting}
+
+Arrojando el siguiente ajuste:
+
+\begin{lstlisting}
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -4.81698e-09     +/- 4.687e-10    (9.729%)
+b               = 1                +/- 0.1258       (12.58%)
+c               = 1                +/- 7.084e+06    (7.084e+08%)
+
+correlation matrix of the fit parameters:
+a      b      c      
+a               1.000 
+b              -0.968  1.000 
+c               0.748 -0.868  1.000 
+\end{lstlisting}
 
 \begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
 	\centering
 	\label{lsblk}
-	\includegraphics[width=0.8\textwidth]{../imgs/c3.PNG}
-	\caption{Eficiencia empírica tras corregir condición} 
+	\includegraphics[width=0.8\textwidth]{../imgs/ejercicio3c.PNG}
+	\caption{Ajuste de eficiencia empírica y teórica} 
 \end{figure}
 
-El ajuste por regresión resultó de la siguiente manera:
-
-
+En el gráfico se aprecia cómo debido a las irregularidades de los resultados se hace un ajuste que no es el que se esperaba conseguir, ya que el tiempo parece constante.
 
 \section{Ejercicio 4:  Mejor y peor caso}
+Se modificó el código fuente del algoritmo de la burbuja para permitir introducir mediante parámetro el modo mejor o peor caso, proporcionando un vector ya ordenado o el inverso.
 Antes de realizar modificaciones la ejecución por lotes mostraba los siguientes resultados de tiempo:
+Tras ejecutar los scripts que ejecutan de forma iterativa e incremental el programa, se procesaron los resultados en gnuplot con los siguientes resultados:
 
 \begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
 	\centering
 	\label{lsblk}
-	\includegraphics[width=0.8\textwidth]{../imgs/c1.PNG}
-	\caption{Gráfica de puntos a partir de los datos del fichero tiempos\_burbuja.dat sin modificaciones} 
+	\includegraphics[width=0.8\textwidth]{../imgs/ejercicio4a.PNG}
+	\caption{Gráfica de puntos a partir de los datos de ejecución del algoritmo forzando el mejor caso} 
 \end{figure}
-
-En el peor caso:
-\begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
-	\centering
-	\label{lsblk}
-	\includegraphics[width=0.8\textwidth]{../imgs/c1.PNG}
-	\caption{Gráfica de puntos a partir de los datos del fichero tiempos\_burbuja.dat sin modificaciones} 
-\end{figure}
-
-En el mejor caso:
-\begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
-	\centering
-	\label{lsblk}
-	\includegraphics[width=0.8\textwidth]{../imgs/c1.PNG}
-	\caption{Gráfica de puntos a partir de los datos del fichero tiempos\_burbuja.dat sin modificaciones} 
-\end{figure}
-
-La representación de los tres escenarios:
 
 \begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
 	\centering
 	\label{lsblk}
-	\includegraphics[width=0.8\textwidth]{../imgs/c1.PNG}
-	\caption{Gráfica de puntos a partir de los datos del fichero tiempos\_burbuja.dat sin modificaciones} 
+	\includegraphics[width=0.8\textwidth]{../imgs/ejercicio4c.PNG}
+	\caption{Gráfica de puntos a partir de los datos de ejecución del algoritmo forzando el peor caso} 
 \end{figure}
 
+La representación de la comparación en los dos escenarios descritos anteriormente:
+
+\begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
+	\centering
+	\label{lsblk}
+	\includegraphics[width=0.8\textwidth]{../imgs/ejercicio4b.PNG}
+	\caption{Mejor y peor caso} 
+\end{figure}
+
+La conclusión que se extrae es que la ganancia en velocidad al proporcionar un vector ya ordenado apenas es perceptible, ya que de esta forma lo único que se ahorran son comparaciones y asignaciones que en conjunto es de una eficiencia constante u $O(1)$, el número de iteraciones es el mismo. 
 
 \section{Ejercicio 5}
 
@@ -299,12 +321,22 @@ Al introducir el cambio y encontrarse el vector ya ordenado, el algoritmo entra 
 	\centering
 	\label{lsblk}
 	\includegraphics[width=0.8\textwidth]{../imgs/ejercicio5.PNG}
-	\caption{Gráfica de puntos a partir de los datos del fichero tiempos\_burbuja.dat sin modificaciones} 
+	\caption{Gráfica a partir de los datos proporcionando un vector ya ordenado y habiendo modificado el algoritmo} 
 \end{figure}
 
+Tras observar la gráfica puede afirmarse que la eficiencia teórica y práctica se ajustan considerablemente.
+\section{Ejercicio 6}
+Se compiló el programa con el algoritmo de la burbuja con parámetros de optimización -O3 y los resultados en tiempo de las prestaciones fueron los siguientes tras modelar los datos en gnuplot:
 
-\bibliographystyle{unsrt} % hay varias formas de citar
-\bibliography{referencias} %archivo citas.bib que contiene las entradas 
+\begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
+	\centering
+	\label{lsblk}
+	\includegraphics[width=0.8\textwidth]{../imgs/ejercicio6.PNG}
+	\caption{Algoritmo de la burbuja con optimización -O3} 
+\end{figure}
+
+Por tanto puede afirmarse que se consigue una ganancia notable en velocidad utilizando optimización en el compilador.
+
 \end{document}
 
 
