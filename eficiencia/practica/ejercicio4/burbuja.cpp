@@ -35,10 +35,13 @@ if (argc!=4)
 	srand(time(0));            // Inicialización del generador de números pseudoaleatorios
 	// mejor caso
 	if(opcion == 1){
+				cout << "mejor" << endl;
+
 		for (int i=0; i<tam; i++)  // Recorrer vector
 			v[i] = i;    // Generar aleatorio [0,vmax[
 	}
 	else {
+		cout << "peorcaso" << endl;
 		for (int i=tam-1; i>=0; i--)  // Recorrer vector
 			v[i] = i;    // Generar aleatorio [0,vmax[
 	}

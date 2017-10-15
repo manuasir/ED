@@ -1,8 +1,8 @@
 #!/bin/csh
-@ inicio = 10
-@ fin = 100000000
-@ incremento = 500
-@ incremento1 = 500
+@ inicio = 100
+@ fin = 1000000
+@ incremento = 100
+@ incremento1 = 100
 set ejecutable = ejercicio_desc
 set salida = tiempos_desc.dat
 

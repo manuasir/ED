@@ -5,8 +5,10 @@
 using namespace std;
 
 int operacion(int *v, int n, int x, int inf, int sup) {
-  int med;
+    int med;
   bool enc=false;
+  for(int i = 0 ; i<1000;i++){
+
   while ((inf<sup) && (!enc)) {
     med = (inf+sup)/2; 
     if (v[med]==x) 
@@ -16,6 +18,7 @@ int operacion(int *v, int n, int x, int inf, int sup) {
     else
       sup = med-1;
   }
+}
   if (enc) 
     return med;
   else 
