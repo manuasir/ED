@@ -7,9 +7,10 @@ using namespace std;
 int operacion(int *v, int n, int x, int inf, int sup) {
     int med;
   bool enc=false;
-  for(int i = 0 ; i<1000;i++){
+    //cout << i << endl;
 
   while ((inf<sup) && (!enc)) {
+    //cout << "en while" << endl;
     med = (inf+sup)/2; 
     if (v[med]==x) 
       enc = true;
@@ -18,7 +19,7 @@ int operacion(int *v, int n, int x, int inf, int sup) {
     else
       sup = med-1;
   }
-}
+
   if (enc) 
     return med;
   else 
@@ -46,7 +47,7 @@ int main(int argc, char * argv[])
   int *v=new int[tam];       // Reserva de memoria
   srand(time(0));            // Inicialización del generador de números pseudoaleatorios
   for (int i=0; i<tam; i++)  // Recorrer vector
-    v[i] = rand() % tam;
+    v[i] = i;
   
   clock_t tini;    // Anotamos el tiempo de inicio
   tini=clock();
@@ -58,7 +59,7 @@ int main(int argc, char * argv[])
   tfin=clock();
 
   // Mostramos resultados
-  cout << tam << "\t" << (tfin-tini)/(double)CLOCKS_PER_SEC << endl;
+  cout << tam << "\t" << (tfin-tini)/(double)CLOCKS_PER_SEC*1000 << endl;
   
   delete [] v;     // Liberamos memoria dinámica
 }
