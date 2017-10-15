@@ -250,8 +250,8 @@ Para medir los tiempos empíricos de este algoritmo se ha realizado un script co
 	\caption{Eficiencia empírica} 
 \end{figure}
 
-Como se aprecia en la gráfica hay una anomalía en la representación, ya que eventualmente los tiempos se disparan de forma muy irregular.
-Tras realizar los siguientes comandos en gnuplot el ajuste por regresión resultó de la siguiente manera:
+Se hubo de realizar iteraciones exponenciales para apreciar cambios en los tiempos, así como cambiar la librería para medir el tiempo de forma más precisa.
+Para ajustar la eficiencia teórica a la empírica se realizó un ajuste por regresión de mínimos cuadrados. Tras realizar los siguientes comandos en gnuplot el ajuste por regresión resultó de la siguiente manera:
 
 \begin{lstlisting}
 gnuplot> f(x) = a*x**2 + b*x + c
@@ -263,15 +263,15 @@ Arrojando el siguiente ajuste:
 \begin{lstlisting}
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-a               = -4.81698e-09     +/- 4.687e-10    (9.729%)
-b               = 1                +/- 0.1258       (12.58%)
-c               = 1                +/- 7.084e+06    (7.084e+08%)
+a               = -1.11436e-16     +/- 7.468e-17    (67.02%)
+b               = 7.62855e-12      +/- 4.948e-12    (64.86%)
+c               = 2.05668e-07      +/- 8.523e-09    (4.144%)
 
 correlation matrix of the fit parameters:
 a      b      c      
 a               1.000 
-b              -0.968  1.000 
-c               0.748 -0.868  1.000 
+b              -0.998  1.000 
+c               0.458 -0.480  1.000 
 \end{lstlisting}
 
 \begin{figure}[H] %con el [H] le obligamos a situar aquí la figura
@@ -281,7 +281,7 @@ c               0.748 -0.868  1.000
 	\caption{Ajuste de eficiencia empírica y teórica} 
 \end{figure}
 
-En el gráfico se aprecia cómo debido a las irregularidades de los resultados se hace un ajuste que no es el que se esperaba conseguir, ya que el tiempo parece constante.
+En el gráfico se aprecia cómo debido a las irregularidades de los resultados se hace un ajuste que no es el que se esperaba conseguir, ya que los tiempos pico distorsionan el ajuste.
 
 \section{Ejercicio 4:  Mejor y peor caso}
 Se modificó el código fuente del algoritmo de la burbuja para permitir introducir mediante parámetro el modo mejor o peor caso, proporcionando un vector ya ordenado o el inverso.
