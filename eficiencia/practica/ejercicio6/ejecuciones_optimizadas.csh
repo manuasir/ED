@@ -1,9 +1,9 @@
 #!/bin/csh
 @ inicio = 100
-@ fin = 1000000
+@ fin = 49500
 @ incremento = 100
-set ejecutable = busqueda_lineal
-set salida = tiempos_busqueda.dat
+set ejecutable = burbuja_optimizado
+set salida = burbuja_optimizado.dat
 
 @ i = $inicio
 echo > $salida
