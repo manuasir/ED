@@ -14,16 +14,14 @@ documentacion:
 	
 # ************ Compilación de módulos ************
 
-$(BIN)/pruebaVector: $(OBJ)/pruebaVector.o $(OBJ)/vd.o
-	$(CXX) -o $(BIN)/pruebaVector $(OBJ)/pruebaVector.o $(OBJ)/vd.o
+$(BIN)/pruebaVector: $(OBJ)/pruebaVector.o
+	$(CXX) -o $(BIN)/pruebaVector $(OBJ)/pruebaVector.o 
 	
 	
 $(OBJ)/pruebaVector.o: $(SRC)/pruebaVector.cpp $(INC)/vd.h 
 	$(CXX) $(CPPFLAGS)  $(SRC)/pruebaVector.cpp -o  $(OBJ)/pruebaVector.o 
 		
 	
-$(OBJ)/vd.o: $(SRC)/vd.cpp
-	$(CXX) $(CPPFLAGS)  $(SRC)/vd.cpp -o  $(OBJ)/vd.o 	
 
 			
 # ************ Limpieza ************
