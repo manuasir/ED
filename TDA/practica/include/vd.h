@@ -7,7 +7,6 @@ class VD{
 
 	private:
 		T * datos;
-		int n;
 		int reservados;
 		void resize(int nuevo_tam);
 		void copiar(int nuevo_tam);

@@ -9,17 +9,16 @@ VD<T>::VD(int tam) {
 	else
 		datos=0;
 	reservados = tam;
-	n=tam;
 }
 
 // constructor de copias
 template <class T>
 VD<T>::VD( const VD<T>& original ) {
 	//assert(n>=0);
-	reservados=original.n;
-	if(n>0){
-		datos = new T[n];
-		for(int i=0;i<n;i++){
+	reservados=original.reservados;
+	if(reservados>0){
+		datos = new T[reservados];
+		for(int i=0;i<reservados;i++){
 			datos[i]=original.datos[i];
 		}
 	}
@@ -31,9 +30,9 @@ VD<T>::VD( const VD<T>& original ) {
 template <class T>
 VD<T>::~VD() {
 	//assert(n>=0);
-	if(n>0){
+	if(reservados>0){
 		delete[] datos;
-		n=0;
+		reservados=0;
 	}
 }
 
@@ -41,11 +40,11 @@ VD<T>::~VD() {
 template <class T>
 VD<T> & VD<T>::operator=(const VD<T> & original) {
 	if(this!=&original){
-		if(n>0) delete[] datos;
-		n=original.n;
-		if(n>0){
-			datos=new T[n];
-			for(int i=0;i<n;++i)
+		if(reservados>0) delete[] datos;
+		reservados=original.reservados;
+		if(reservados>0){
+			datos=new T[reservados];
+			for(int i=0;i<reservados;++i)
 				datos[i]=original.datos[i];
 		}
 	
