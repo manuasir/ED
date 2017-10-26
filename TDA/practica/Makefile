@@ -21,9 +21,7 @@ $(BIN)/pruebaVector: $(OBJ)/pruebaVector.o
 $(OBJ)/pruebaVector.o: $(SRC)/pruebaVector.cpp $(INC)/vd.h 
 	$(CXX) $(CPPFLAGS)  $(SRC)/pruebaVector.cpp -o  $(OBJ)/pruebaVector.o 
 		
-	
 
-			
 # ************ Limpieza ************
 clean :
 	-rm $(OBJ)/* $(SRC)/*~ $(INC)/*~ ./*~

@@ -3,18 +3,20 @@
 template <class T>
 VD<T>::VD(int tam) {
 	//assert(n>=0);
+	//cout << "tam " << tam << endl;
 	if(tam>0)
 		datos = new T[tam];
 	else
 		datos=0;
 	reservados = tam;
+	n=tam;
 }
 
 // constructor de copias
 template <class T>
-VD<T>::VD(const VD<T>& original) {
+VD<T>::VD( const VD<T>& original ) {
 	//assert(n>=0);
-	n=original.n;
+	reservados=original.n;
 	if(n>0){
 		datos = new T[n];
 		for(int i=0;i<n;i++){
