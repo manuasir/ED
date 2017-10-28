@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 ./practica/doc/
+./racional/doc/
 # Compiled Object files
 *.slo
 *.lo

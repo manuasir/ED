@@ -26,4 +26,10 @@ cout << "get max col " << P.getMaxCol() << endl;
 cout << "get min fila " << P.getMinFila() << endl;
 cout << "get max fila " << P.getMaxFila() << endl;
 cout << "tamaño " << P.size() << endl;
+P.Set(-1,15,'U');
+cout << "get min col " << P.getMinCol() << endl;
+cout << "get max col " << P.getMaxCol() << endl;
+cout << "get min fila " << P.getMinFila() << endl;
+cout << "get max fila " << P.getMaxFila() << endl;
+cout << "tamaño " << P.size() << endl;
 }     

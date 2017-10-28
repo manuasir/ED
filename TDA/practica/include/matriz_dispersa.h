@@ -5,7 +5,6 @@
 using namespace std;
 template <class T>
 class Matriz_Dispersa{
-	
 	private:
 		struct tripleta{
 			int fila,col;
