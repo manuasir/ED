@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-
+./practica/doc/
 # Compiled Object files
 *.slo
 *.lo
