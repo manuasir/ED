@@ -13,7 +13,7 @@ int main(int argc, char * argv[]){
 	 return 0;
   }
   Sopa_letras Sl;
-  //f>>Sl;//Leemos las palabras y construimos la sopa de letras
+  f>>Sl;//Leemos las palabras y construimos la sopa de letras
   //El usuario ahora tiene que ir descubriendo las palabras
   //en la sopa de letras
   /*

@@ -5,7 +5,7 @@ BIN = bin
 CXX = g++
 CPPFLAGS = -Wall -g  -I$(INC) -c --std=c++11
 
-all:$(BIN)/prueba
+all:$(BIN)/prueba_sp
 
 # ************ Generación de documentación ******************
 documentacion:
