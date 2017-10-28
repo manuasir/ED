@@ -6,8 +6,8 @@ class VD{
 	private:
 		T * datos;
 		int reservados;
-		void resize(int nuevo_tam);
-		void copiar(int nuevo_tam);
+		int maximo;
+		void resize(int n);
 		void copiar(const VD<T> & v);
 		void liberar();
 
@@ -19,6 +19,7 @@ class VD{
 		VD<T> & operator=(const VD<T> & original);
 		const T & operator[](int i) const { return datos[i]; }
 		T & operator[](int i){ return datos[i]; }
+		void set(T element);
 };
 #include "../src/vd.cpp"
 #endif
