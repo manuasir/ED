@@ -32,4 +32,11 @@ cout << "get max col " << P.getMaxCol() << endl;
 cout << "get min fila " << P.getMinFila() << endl;
 cout << "get max fila " << P.getMaxFila() << endl;
 cout << "tamaño " << P.size() << endl;
+cout << "num filas " << P.getNumFilas() << endl;
+cout << "num columnas " << P.getNumCols() << endl;
+cout << "get at -1,15: " << P.Get(-1,15) << endl;
+cout << "get at -1,15: " << P.Get(-1,15) << endl;
+cout << "get at 2,2: " << P.Get(2,2) << endl;
+cout << "get at 10,10: " << P.Get(10,10) << endl;
+
 }     

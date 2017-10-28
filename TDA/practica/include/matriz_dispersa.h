@@ -5,6 +5,7 @@
 using namespace std;
 template <class T>
 class Matriz_Dispersa{
+
 	private:
 		struct tripleta{
 			int fila,col;
@@ -16,6 +17,8 @@ class Matriz_Dispersa{
 	public:
 		Matriz_Dispersa<T>();
 		void Set(int i,int j,T dato);
+		T Get(int fil, int co);
+		
 		int size(){ return m.size(); }
 		const char getValorDefecto() const { return valor_defecto; }
 		void setValorDefecto(const char & car) { m[m.size()-1].d = car; valor_defecto=car; }
@@ -23,6 +26,8 @@ class Matriz_Dispersa{
 		int getMaxCol();
 		int getMinFila();
 		int getMaxFila();
+		int getNumFilas();
+		int getNumCols();
 };
 
 
