@@ -10,6 +10,13 @@ class Sopa_letras{
 		Matriz_Dispersa<char> matriz;
 	public:
 		Sopa_letras();
+		friend ostream & operator<<(ostream & s, Sopa_letras & sopa){
+			return s;
+		}
+
+		friend istream & operator>>(istream & is, Sopa_letras & sopa) {
+		    return is;
+		}
 };
 
 

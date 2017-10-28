@@ -8,5 +8,5 @@ ANIMALES
 8	8	vd	CABALLO
 10	8	vd	RATON
 10	5	vd	PATO
--1	10	dd      CANGURO
--1	10	di      CARACOL
+-1	10	dd  CANGURO
+-1	10	di  CARACOL

@@ -6,23 +6,24 @@
 #include <iostream>
 using namespace std;
 int main(){
-
-  
  Matriz_Dispersa<char> P;
+ cout << "primer tamanño " << P.size() << endl;
+
  int r,c;
  r=2;c=2;
  //La Ponemos horizontal
 
- const char * cad="hola";
+ const char * cad="abcdefd";
  for (unsigned int i=0;i<strlen(cad);i++,c++)
      P.Set(r,c,cad[i]);
  r=2;c=2;
- 
- for (unsigned int i=0;i<strlen(cad);i++,r++)
-     P.Set(r,c,cad[i]);
-cout<<P<<endl;
+
 cout << P.getValorDefecto() << endl;
 P.setValorDefecto('X');
-cout << P.getValorDefecto() << endl;
-
+cout << "valor por defecto " << P.getValorDefecto() << endl;
+cout << "get min col " << P.getMinCol() << endl;
+cout << "get max col " << P.getMaxCol() << endl;
+cout << "get min fila " << P.getMinFila() << endl;
+cout << "get max fila " << P.getMaxFila() << endl;
+cout << "tamaño " << P.size() << endl;
 }     

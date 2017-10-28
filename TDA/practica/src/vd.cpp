@@ -1,20 +1,21 @@
 
 // constructor por defecto
 template <class T>
-
 VD<T>::VD(int tam) {
+	std::cout << "en vd " << tam << std::endl;
 	if(tam>0)
-		datos = new T[tam*2];
+		datos = new T[tam];
 	else
 		datos=0;
 	reservados = tam;
-	maximo=tam*2;
+	n=0;
 }
 
 // constructor de copias
 template <class T>
 VD<T>::VD( const VD<T>& original ) {
 	reservados=original.reservados;
+	n=original.n;
 	if(reservados>0){
 		datos = new T[reservados];
 		for(int i=0;i<reservados;i++){
@@ -31,6 +32,7 @@ VD<T>::~VD() {
 	if(reservados>0){
 		delete[] datos;
 		reservados=0;
+		n=0;
 	}
 }
 
@@ -40,6 +42,7 @@ VD<T> & VD<T>::operator=(const VD<T> & original) {
 	if(this!=&original){
 		if(reservados>0) delete[] datos;
 		reservados=original.reservados;
+		n=original.n;
 		if(reservados>0){
 			datos=new T[reservados];
 			for(int i=0;i<reservados;++i)
@@ -53,14 +56,14 @@ VD<T> & VD<T>::operator=(const VD<T> & original) {
 
 // operador de cambiar el tamaño
 template <class T>
-void VD<T>::resize(int n) {
-	if(n!=reservados){
-		if(n!=0){
+void VD<T>::resize(int nuevotam) {
+	if(nuevotam!=reservados){
+		if(nuevotam!=0){
 			T * nuevos_datos;
-			nuevos_datos = new T[n];
+			nuevos_datos = new T[nuevotam];
 			if(reservados>0){
 				int minimo;
-				minimo = reservados<n?reservados:n;
+				minimo = reservados<nuevotam?reservados:nuevotam;
 				for(int i=0;i<minimo;++i){
 					nuevos_datos[i] = datos[i];
 				}
@@ -79,8 +82,10 @@ void VD<T>::resize(int n) {
 
 template <class T>
 void VD<T>::set(T element) {
-	resize(reservados+1);
-	datos[reservados-1] = element;
+	if(n>reservados/2)
+		resize(reservados+n);
+	n+=1;
+	datos[n-1] = element;
 }
 
 template <class T>
