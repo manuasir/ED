@@ -8,7 +8,7 @@ using namespace std;
 
 int main(){
 	
-	VD<int> p(100);
+	VD<int> p(20);
 	VD<int> p2(5);
 	std::cout << "creado p1 " << p.size() <<std::endl;
 	std::cout << "creado p2 " << p2.size() <<std::endl;
@@ -18,6 +18,11 @@ int main(){
 	cout << "tamaño de p2 " << p2.size() << endl;
 	p2=p;
 	cout << "tamaño de p2 " << p2.size() << endl;
+	cout << "en posicion 15 de p2 " << p2[15] << endl;
+	p2.set(15,666);
+	cout << "en posicion 15 de p2 " << p2[15] << endl;
+	cout << "tamaño de vector tras insercion " << p2.size() << endl;
+
 
 
 	return 0;

@@ -20,6 +20,7 @@ class VD{
 		const T & operator[](int i) const { return datos[i]; }
 		T & operator[](int i){ return datos[i]; }
 		void set(T element);
+		void set(int i,T element);
 };
 #include "../src/vd.cpp"
 #endif

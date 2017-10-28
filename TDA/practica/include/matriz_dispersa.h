@@ -17,6 +17,8 @@ class Matriz_Dispersa{
 		Matriz_Dispersa<T>();
 		void Set(int i,int j,T dato);
 		int size(){ return m.size(); }
+		char getValorDefecto() const { return  m[m.size()-1].d; }
+		void setValorDefecto(const char & car) { m[m.size()-1].d = car; }
 		friend ostream & operator<<(ostream & s, Matriz_Dispersa<T> & mat){
 			for(int i=0;i<mat.m.size();++i){
 				 s << mat.m[i].d << endl;

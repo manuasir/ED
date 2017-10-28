@@ -82,3 +82,20 @@ void VD<T>::set(T element) {
 	resize(reservados+1);
 	datos[reservados-1] = element;
 }
+
+template <class T>
+void VD<T>::set(int i,T element) {
+	if(i==0)
+		resize(1);
+	resize(reservados+1);
+	int dif = reservados-i-1;
+	T * aux = new T[dif];
+	for(int c=0, j=i;c<dif;++c,++j){
+		aux[c] = datos[j];
+	}
+	datos[i] = element;
+	for(int c=i+1, j=0;c<reservados;c++,j++){
+		datos[c] = aux[j];
+	}
+	delete[] aux;
+}

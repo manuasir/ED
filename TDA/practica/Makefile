@@ -5,7 +5,7 @@ BIN = bin
 CXX = g++
 CPPFLAGS = -Wall -g  -I$(INC) -c --std=c++11
 
-all:$(BIN)/prueba
+all:$(BIN)/pruebaVector
 
 # ************ Generación de documentación ******************
 documentacion:
@@ -14,13 +14,6 @@ documentacion:
 	
 # ************ Compilación de módulos ************
 
-$(BIN)/prueba: $(OBJ)/prueba.o
-	$(CXX) -o $(BIN)/prueba $(OBJ)/prueba.o 
-	
-	
-$(OBJ)/pruebaVector.o: $(SRC)/pruebaVector.cpp $(INC)/vd.h 
-	$(CXX) $(CPPFLAGS)  $(SRC)/pruebaVector.cpp -o  $(OBJ)/pruebaVector.o 
-		
 
 $(BIN)/pruebaVector: $(OBJ)/pruebaVector.o
 	$(CXX) -o $(BIN)/pruebaVector $(OBJ)/pruebaVector.o 

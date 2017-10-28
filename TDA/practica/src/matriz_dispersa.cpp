@@ -2,7 +2,12 @@
 // constructor por defecto
 template <class T>
 Matriz_Dispersa<T>::Matriz_Dispersa() {
-	valor_defecto='*';
+	tripleta defecto;
+	defecto.fila=9999999;
+	defecto.col=9999999;
+	defecto.d='0';
+	m.set(0,defecto);
+	valor_defecto='0';
 }
 
 template <class T>

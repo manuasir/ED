@@ -21,5 +21,8 @@ int main(){
  for (unsigned int i=0;i<strlen(cad);i++,r++)
      P.Set(r,c,cad[i]);
 cout<<P<<endl;
+cout << P.getValorDefecto() << endl;
+P.setValorDefecto('X');
+cout << P.getValorDefecto() << endl;
 
 }     
