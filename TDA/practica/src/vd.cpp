@@ -1,9 +1,8 @@
 
 // constructor por defecto
 template <class T>
+
 VD<T>::VD(int tam) {
-	//assert(n>=0);
-	//cout << "tam " << tam << endl;
 	if(tam>0)
 		datos = new T[tam];
 	else
@@ -14,7 +13,6 @@ VD<T>::VD(int tam) {
 // constructor de copias
 template <class T>
 VD<T>::VD( const VD<T>& original ) {
-	//assert(n>=0);
 	reservados=original.reservados;
 	if(reservados>0){
 		datos = new T[reservados];
@@ -29,7 +27,6 @@ VD<T>::VD( const VD<T>& original ) {
 // destructor
 template <class T>
 VD<T>::~VD() {
-	//assert(n>=0);
 	if(reservados>0){
 		delete[] datos;
 		reservados=0;
