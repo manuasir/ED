@@ -69,7 +69,7 @@ void VD<T>::resize(int nuevotam) {
 				}
 				delete[] datos;
 			}
-			reservados=n;
+			reservados=nuevotam;
 			datos=nuevos_datos;
 		} else {
 			if(reservados>0)
@@ -84,7 +84,7 @@ template <class T>
 void VD<T>::set(T element) {
 	if(n>reservados/2)
 		resize(reservados+n);
-	n+=1;
+	n++;
 	datos[n-1] = element;
 }
 

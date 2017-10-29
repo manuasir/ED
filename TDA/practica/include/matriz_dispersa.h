@@ -21,7 +21,7 @@ class Matriz_Dispersa{
 		
 		int size(){ return m.size(); }
 		const char getValorDefecto() const { return valor_defecto; }
-		void setValorDefecto(const char & car) { m[m.size()-1].d = car; valor_defecto=car; }
+		void setValorDefecto(const char & car) { valor_defecto=car; }
 		int getMinCol();
 		int getMaxCol();
 		int getMinFila();
