@@ -21,9 +21,9 @@ int main(int argc, char * argv[]){
   cout << "primer caracter de todo " << Sl.getPrimerCaracter() << endl;
   cout << "tamaño de max columna " << Sl.getMaxCol() << endl;
   cout << "num colscolumna " << Sl.getNumCols() << endl;
-
-
   while (Sl.NumPalabras()!=0){
+
+  
      cout<<Sl<<endl;
      cout<<"Dime una palabra: ";
      string word;
@@ -46,7 +46,7 @@ int main(int argc, char * argv[]){
      else{
       cout << "bien!" << endl;
  //La pone en negrita. Ademas la pone dentro de la lista de palabras descubiertas.
- // Sl.Poner_Acertada(word,row,col,direccion);
+     //Sl.Poner_Acertada(word,row,col,direccion);
     }
   }  
 }     

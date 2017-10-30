@@ -18,7 +18,7 @@ class Matriz_Dispersa{
 		Matriz_Dispersa<T>();
 		void Set(int i,int j,T dato);
 		T Get(int fil, int co);
-		
+		void resize(int tam){ m.resize(tam); }
 		int size(){ return m.size(); }
 		const char getValorDefecto() const { return valor_defecto; }
 		void setValorDefecto(const char & car) { valor_defecto=car; }

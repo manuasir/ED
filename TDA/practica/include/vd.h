@@ -8,12 +8,13 @@ class VD{
 		T * datos;
 		int reservados;
 		int maximo;
-		void resize(int n);
 		void copiar(const VD<T> & v);
 		void liberar();
 		int n;
 
 	public:
+		void resize(int n);
+
 		VD<T>(int tam=5);
 		VD<T>(const VD<T>& original);
 		~VD<T>();
