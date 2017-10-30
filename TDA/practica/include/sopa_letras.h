@@ -17,14 +17,30 @@ class Sopa_letras{
 		int getMaxCol() { return matriz.getMaxCol(); }
 		int getNumCols() { return matriz.getNumCols(); }
 		char getPrimerCaracter() { return matriz.Get(7,7); }
-
+		bool Comprobar_Palabra(string palabra,int i,int j,string dir);
 		friend ostream & operator<<(ostream & s, Sopa_letras & sopa){
+			if(sopa.matriz.getMinCol() < 0 or sopa.matriz.getMinCol() > 9)
+				s << "    ";
+			else 
+				s << "     ";
+			for(int i=sopa.matriz.getMinCol();i<=sopa.matriz.getMaxCol();i++){
+				if(i<10 || i<0)
+					s << i << "  ";
+				else
+					s << i << " ";
+			}
+			s << '\n';
 			for(int i=sopa.matriz.getMinFila();i<=sopa.matriz.getMaxFila();i++){
+				if(i < 0 || i > 9)
+					s << "|" << i << "|";
+				else
+					s << "| " << i << "|";
+				//cout << "mincol " << sopa.matriz.getMinCol() << endl;
 				for(int j=sopa.matriz.getMinCol();j<=sopa.matriz.getMaxCol();j++){
 					if(sopa.matriz.Get(i,j) != sopa.matriz.getValorDefecto())
-						s << sopa.matriz.Get(i,j) << " ";
+						s << " " << sopa.matriz.Get(i,j) << " ";
 					else
-						s << sopa.matriz.getValorDefecto() << " ";
+						s << " " << sopa.matriz.getValorDefecto() << " ";
 				}		
 				s << '\n';
 			}

@@ -13,7 +13,6 @@ int main(int argc, char * argv[]){
 	 return 0;
   }
 
-
   Sopa_letras Sl;
   f>>Sl;//Leemos las palabras y construimos la sopa de letras
   //El usuario ahora tiene que ir descubriendo las palabras
@@ -22,9 +21,8 @@ int main(int argc, char * argv[]){
   cout << "primer caracter de todo " << Sl.getPrimerCaracter() << endl;
   cout << "tamaño de max columna " << Sl.getMaxCol() << endl;
   cout << "num colscolumna " << Sl.getNumCols() << endl;
-    cout<<Sl<<endl;
 
-/*
+
   while (Sl.NumPalabras()!=0){
      cout<<Sl<<endl;
      cout<<"Dime una palabra: ";
@@ -42,14 +40,13 @@ int main(int argc, char * argv[]){
      string direccion;
 
      cin>>direccion;
-   //  if (!Sl.Comprobar_Palabra(word,row,col,direccion)){//Esta?
- //cout<<"La palabra "<<word << " no esta"<<endl;
-  //   }
-  //   else{
+     if (!Sl.Comprobar_Palabra(word,row,col,direccion)){//Esta?
+      cout<<"La palabra "<<word << " no esta"<<endl;
+    }
+     else{
+      cout << "bien!" << endl;
  //La pone en negrita. Ademas la pone dentro de la lista de palabras descubiertas.
  // Sl.Poner_Acertada(word,row,col,direccion);
-   //  }
-  }
-  cout<<Sl<<endl;
-  */
+    }
+  }  
 }     
