@@ -13,6 +13,7 @@ class Sopa_letras{
 		Matriz_Dispersa<char> matriz;
 		Matriz_Dispersa<bool> acertadas;
 		VD<string> palabras;
+		VD<string> palabras_acertadas;
 
 	public:
 		Sopa_letras();
@@ -23,7 +24,8 @@ class Sopa_letras{
 		int getNumCols() { return matriz.getNumCols(); }
 		char getPrimerCaracter() { return matriz.Get(7,7); }
 		bool Comprobar_Palabra(string palabra,int i,int j,string dir);
-		void Poner_Acertada(string palabra,int i,int j,string dir);
+		void Poner_Acertada(string palabra,int i,int j,string dir){palabras_acertadas.set(palabra);};
+		bool checkPalabraEnLista(string palabra);
 		friend ostream & operator<<(ostream & s, Sopa_letras & sopa){
 			if(sopa.matriz.getMinCol() < 0 or sopa.matriz.getMinCol() > 9)
 				s << "    ";
@@ -41,16 +43,27 @@ class Sopa_letras{
 					s << "|" << i << "|";
 				else
 					s << "| " << i << "|";
-				//cout << "mincol " << sopa.matriz.getMinCol() << endl;
 				for(int j=sopa.matriz.getMinCol();j<=sopa.matriz.getMaxCol();j++){
 					if(sopa.matriz.Get(i,j) != sopa.matriz.getValorDefecto()){
-						if(sopa.acertadas.Get(i,j) == false)
+						if(sopa.acertadas.size() > 0){
+							cout << "primerif" << endl;
+						 if(sopa.acertadas.Get(i,j) and sopa.acertadas.Get(i,j) == false){
+							//cout << "en if de acertada " << endl;
+							cout << "segundoif" << endl;
+
 							s << "\e[0m" << " " << sopa.matriz.Get(i,j) << " " ;
-						else
+						}
+						}
+						else{
+							//cout << "en else de acertada " << endl;
+
 							s << "\e[1m" << " " << sopa.matriz.Get(i,j) << " "  << "\e[0m";
-					}
-					else
+						}
+					} else{
+						//cout << "en else " << sopa.matriz.getMinCol() << sopa.matriz.getMaxCol() <<  endl;
+
 						s << "\e[1m" << " " << sopa.matriz.getValorDefecto() << " " << "\e[0m";
+					}
 				}		
 				s << '\n';
 			}

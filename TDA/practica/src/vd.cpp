@@ -70,12 +70,14 @@ void VD<T>::resize(int nuevotam) {
 				delete[] datos;
 			}
 			reservados=nuevotam;
+			n=nuevotam;
 			datos=nuevos_datos;
 		} else {
 			if(reservados>0)
 				delete[] datos;
 			datos=0;
 			reservados=0;
+			n=0;
 		}
 	}
 }

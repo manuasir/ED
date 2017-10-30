@@ -2,6 +2,15 @@
 Sopa_letras::Sopa_letras(){
 }
 
+bool Sopa_letras::checkPalabraEnLista(string palabra){
+	bool condicion=false;
+	for(int i=0;i<palabras.size();i++){
+		if(palabras[i] == palabra)
+			condicion=true;
+	}
+	return condicion;
+}
+
 bool Sopa_letras::Comprobar_Palabra(string palabra,int i,int j,string dir){
 	char * palabra_char = new char[palabra.length() + 1];
 	strcpy(palabra_char, palabra.c_str());
@@ -10,7 +19,6 @@ bool Sopa_letras::Comprobar_Palabra(string palabra,int i,int j,string dir){
     if(dir == "hi"){ // horizontal izquierda
     	int inc = j;
     	for (unsigned int index=0;index<palabra.length();index++,inc--){
-    		cout << "seteando a true";
 	    	acertadas.Set(i,inc,false);
 			if(matriz.Get(i,inc) != palabra_char[index]){
 				comprobar=false;
@@ -41,8 +49,6 @@ bool Sopa_letras::Comprobar_Palabra(string palabra,int i,int j,string dir){
 	else if (dir == "vd"){ // vertical abajo
 		int inc = i;
 		for (unsigned int index=0;index<palabra.length();index++,inc++){
-    		cout << "seteando a true";
-
 	    	acertadas.Set(inc,j,false);
 			if(matriz.Get(inc,j) != palabra_char[index]){
 				comprobar=false;
@@ -72,9 +78,12 @@ bool Sopa_letras::Comprobar_Palabra(string palabra,int i,int j,string dir){
 			}
     	}
     }
-    if(comprobar){
-    	cout << "Acertada! " << endl;
+    
+    if(comprobar)
+    	if(!checkPalabraEnLista(palabra)){
+    		comprobar=false;
+    		acertadas.resize(indiceUltimaAcertada);
+    	}
     	
-    }
     return comprobar;
 }
