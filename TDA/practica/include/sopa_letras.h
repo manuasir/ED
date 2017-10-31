@@ -24,7 +24,7 @@ class Sopa_letras{
 		int getNumCols() { return matriz.getNumCols(); }
 		char getPrimerCaracter() { return matriz.Get(7,7); }
 		bool Comprobar_Palabra(string palabra,int i,int j,string dir);
-		void Poner_Acertada(string palabra,int i,int j,string dir){palabras_acertadas.set(palabra);};
+		void Poner_Acertada(string palabra,int i,int j,string dir){ palabras_acertadas.set(palabra); }
 		bool checkPalabraEnLista(string palabra);
 		friend ostream & operator<<(ostream & s, Sopa_letras & sopa){
 			if(sopa.matriz.getMinCol() < 0 or sopa.matriz.getMinCol() > 9)
@@ -115,7 +115,6 @@ class Sopa_letras{
     				int inc = i;
     				for (unsigned int index=0;index<palabra.length();index++,inc++){
 	    				if(sopa.matriz.Get(inc,j) != sopa.matriz.getValorDefecto() and sopa.matriz.Get(inc,j) != palabra_char[index] and sopa.matriz.Get(inc,j) != '\0'){
-	    					cout << "no se puede insertar porque " << sopa.matriz.Get(inc,j) << " es distinto de " <<  sopa.matriz.getValorDefecto() << " y " << sopa.matriz.Get(inc,j) << " es distinto de " <<  palabra_char[index];
 	    					puedeInsertarse=false;
 	    				}
 			    	}

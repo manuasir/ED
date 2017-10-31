@@ -35,14 +35,13 @@ int main(int argc, char * argv[]){
      cout<<"Direccion Arriba (vu), Abajo (vd), Izquierda (hi) , Derecha (hd), Diagonal abajo derecha (dd),Diagonal abajo izquierda (di) :";
 
      string direccion;
-
      cin>>direccion;
      if (!Sl.Comprobar_Palabra(word,row,col,direccion)){//Esta?
       cout<<"La palabra "<<word << " no esta"<<endl;
     } else{
       cout << "bien!" << endl;
  //La pone en negrita. Ademas la pone dentro de la lista de palabras descubiertas.
-    // Sl.Poner_Acertada(word,row,col,direccion);
+      Sl.Poner_Acertada(word,row,col,direccion);
     }
   }  
 }     
