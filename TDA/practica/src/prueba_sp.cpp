@@ -3,6 +3,7 @@
 #include "../include/sopa_letras.h"
 int main(int argc, char * argv[]){
  
+
   if (argc!=2){
     cout<<"Dime el nombre del fichero con las palabras de la sopa de letras"<<endl;
     return 0;
@@ -13,12 +14,13 @@ int main(int argc, char * argv[]){
 	 return 0;
   }
 
-
   Sopa_letras Sl;
   f>>Sl;//Leemos las palabras y construimos la sopa de letras
   //El usuario ahora tiene que ir descubriendo las palabras
   //en la sopa de letras
   while (Sl.NumPalabras()!=0){
+
+    
      cout<<Sl<<endl;
      cout<<"Dime una palabra: ";
      string word;

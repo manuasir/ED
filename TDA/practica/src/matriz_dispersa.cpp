@@ -7,7 +7,7 @@ Matriz_Dispersa<T>::Matriz_Dispersa() {
 
 template <class T>
 void Matriz_Dispersa<T>::Set(int i,int j,T dato){
-	//cout << "seteando en fila: " << i << " columna: " << j << " valor: " << dato << endl;
+	cout << "seteando en fila: " << i << " columna: " << j << " valor: " << dato << endl;
 	//cout << "max fila " << getMaxFila() << " max col: " << getMaxCol() << " valor: " << dato << endl;
 	tripleta aux;
 	aux.fila=i;
@@ -20,6 +20,8 @@ template <class T>
 T Matriz_Dispersa<T>::Get(int fil,int co){
 	T dato = valor_defecto;
 	for(int i=0;i<m.size();++i){
+		//cout << "haciendo get de " << m.size() <<  endl;
+
 		if(m[i].fila == fil && m[i].col == co){
 			dato = m[i].d;
 		}

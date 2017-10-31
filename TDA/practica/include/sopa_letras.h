@@ -43,26 +43,15 @@ class Sopa_letras{
 					s << "|" << i << "|";
 				else
 					s << "| " << i << "|";
+				//cout << "mincol " << sopa.matriz.getMinCol() << endl;
 				for(int j=sopa.matriz.getMinCol();j<=sopa.matriz.getMaxCol();j++){
 					if(sopa.matriz.Get(i,j) != sopa.matriz.getValorDefecto()){
-						if(sopa.acertadas.size() > 0){
-							cout << "primerif" << endl;
-						 if(sopa.acertadas.Get(i,j) and sopa.acertadas.Get(i,j) == false){
-							//cout << "en if de acertada " << endl;
-							cout << "segundoif" << endl;
-
+						if(sopa.acertadas.Get(i,j) == false)
 							s << "\e[0m" << " " << sopa.matriz.Get(i,j) << " " ;
-						}
-						}
-						else{
-							//cout << "en else de acertada " << endl;
-
+						else
 							s << "\e[1m" << " " << sopa.matriz.Get(i,j) << " "  << "\e[0m";
-						}
-					} else{
-						//cout << "en else " << sopa.matriz.getMinCol() << sopa.matriz.getMaxCol() <<  endl;
-
-						s << "\e[1m" << " " << sopa.matriz.getValorDefecto() << " " << "\e[0m";
+					} else {
+						s << "\e[1m" << " " << "X" << " " << "\e[0m";
 					}
 				}		
 				s << '\n';
@@ -81,6 +70,7 @@ class Sopa_letras{
 			    string dir,palabra;
 			   
 			    if (!(iss >> i >> j >> dir >> palabra)) { break; } // error
+			    cout << "!! " << palabra << " i:" << i << endl;
 			    char * palabra_char = new char[palabra.length() + 1];
 				strcpy(palabra_char, palabra.c_str());
 				bool puedeInsertarse=true;
@@ -124,7 +114,8 @@ class Sopa_letras{
     			else if (dir == "vd"){ // vertical abajo
     				int inc = i;
     				for (unsigned int index=0;index<palabra.length();index++,inc++){
-	    				if(sopa.matriz.Get(inc,j) != sopa.matriz.getValorDefecto() and sopa.matriz.Get(inc,j) != palabra_char[index]){
+	    				if(sopa.matriz.Get(inc,j) != sopa.matriz.getValorDefecto() and sopa.matriz.Get(inc,j) != palabra_char[index] and sopa.matriz.Get(inc,j) != '\0'){
+	    					cout << "no se puede insertar porque " << sopa.matriz.Get(inc,j) << " es distinto de " <<  sopa.matriz.getValorDefecto() << " y " << sopa.matriz.Get(inc,j) << " es distinto de " <<  palabra_char[index];
 	    					puedeInsertarse=false;
 	    				}
 			    	}

@@ -19,6 +19,7 @@ class VD{
 		VD<T>(const VD<T>& original);
 		~VD<T>();
 		const int size() const { return n; }
+		const int getReservados() const { return reservados; }
 		VD<T> & operator=(const VD<T> & original);
 		const T & operator[](int i) const { return datos[i]; }
 		T & operator[](int i){ return datos[i]; }
