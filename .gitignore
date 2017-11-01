@@ -1,7 +1,7 @@
 # Prerequisites
 *.d
-./TDA/practica/doc/html
-./TDA/racional/doc/html
+./practica/doc/html
+./racional/doc/html
 # Compiled Object files
 *.slo
 *.lo
