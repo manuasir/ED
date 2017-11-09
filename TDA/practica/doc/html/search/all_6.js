@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['set',['set',['../d1/dbc/classVD.html#a720ed40c508fbb3ee12b632d647437fc',1,'VD::set(T element)'],['../d1/dbc/classVD.html#a98b3abc9c89673fa245c3762e4c1622d',1,'VD::set(int i, T element)'],['../da/d62/classMatriz__Dispersa.html#a2b46972f5e00656f8ccf1c5033128dd7',1,'Matriz_Dispersa::Set()']]],
-  ['setvalordefecto',['setValorDefecto',['../da/d62/classMatriz__Dispersa.html#acd1d358d7211aab8df83ba75fb3048d3',1,'Matriz_Dispersa']]],
-  ['size',['size',['../da/d62/classMatriz__Dispersa.html#af1e35a78fb28385759d89ab288b79076',1,'Matriz_Dispersa::size()'],['../d1/dbc/classVD.html#a32caab5e3d747124721d5b8fb256e007',1,'VD::size()']]],
-  ['sopa_5fletras',['Sopa_letras',['../d3/d83/classSopa__letras.html',1,'']]]
+  ['operator_3c_3c',['operator&lt;&lt;',['../d3/d83/classSopa__letras.html#ae35d5838cadb7dab72ae624895e9a8a2',1,'Sopa_letras']]],
+  ['operator_3d',['operator=',['../d1/dbc/classVD.html#a371ebfc0e18115c1881e46c7dcb173ed',1,'VD']]],
+  ['operator_3e_3e',['operator&gt;&gt;',['../d3/d83/classSopa__letras.html#afefceba92b9285ce2f5bbae104996ce4',1,'Sopa_letras']]],
+  ['operator_5b_5d',['operator[]',['../d1/dbc/classVD.html#afb4ee960e03b385a5f7fd6d5e44bf3cf',1,'VD::operator[](int i) const '],['../d1/dbc/classVD.html#a7d80240b5791d62b7e27657763afe712',1,'VD::operator[](int i)']]]
 ];

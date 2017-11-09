@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['datos',['datos',['../d1/dbc/classVD.html#affc5ceba10ca993ec60d3398857e24d0',1,'VD']]]
+  ['acertadas',['acertadas',['../d3/d83/classSopa__letras.html#a9cf63f2e0e04595d560913f8052c0141',1,'Sopa_letras']]]
 ];

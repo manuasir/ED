@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['rep_20del_20tda_20matriz_20dispersa',['Rep del TDA Matriz Dispersa',['../repConjunto.html',1,'']]],
-  ['reservados',['reservados',['../d1/dbc/classVD.html#ab9a2fccaf77055a96deb6395e522116e',1,'VD']]],
-  ['resize',['resize',['../da/d62/classMatriz__Dispersa.html#a8a887121fb49ca0860b194c1fe66e6ce',1,'Matriz_Dispersa::resize()'],['../d1/dbc/classVD.html#a7e08672c9c60a226910025205f4ea990',1,'VD::resize()']]]
+  ['n',['n',['../d1/dbc/classVD.html#a6dea9ce4fefcaae027de3c11b016245e',1,'VD']]],
+  ['nacertadas',['nAcertadas',['../d3/d83/classSopa__letras.html#a1b6faaf09e2e9da421f1cc4bf787b708',1,'Sopa_letras']]],
+  ['npendientes',['nPendientes',['../d3/d83/classSopa__letras.html#a1c71855a0f4671833571072edb0b2684',1,'Sopa_letras']]],
+  ['numpalabras',['NumPalabras',['../d3/d83/classSopa__letras.html#ac6f0bbda1fd2db3126c0a824a44937cb',1,'Sopa_letras']]]
 ];
