@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vd',['VD',['../d1/dbc/classVD.html#ab45540182b51e76dd5431feaecf824dd',1,'VD::VD(int tam=5)'],['../d1/dbc/classVD.html#a4f22b92dd8ace25d50311ccd61508dfc',1,'VD::VD(const VD&lt; T &gt; &amp;original)']]]
+  ['resize',['resize',['../da/d62/classMatriz__Dispersa.html#a8a887121fb49ca0860b194c1fe66e6ce',1,'Matriz_Dispersa::resize()'],['../d1/dbc/classVD.html#a7e08672c9c60a226910025205f4ea990',1,'VD::resize()']]]
 ];

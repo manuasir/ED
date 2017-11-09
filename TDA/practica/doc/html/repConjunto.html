@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Practica2-ManuelJiménezBernal: Rep del TDA Vector Dinámico</title>
+<title>Practica2-ManuelJiménezBernal: Rep del TDA Matriz Dispersa</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,16 +100,30 @@ $(document).ready(function(){initNavTree('repConjunto.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Rep del TDA Vector Dinámico </div>  </div>
+<div class="title">Rep del TDA Matriz Dispersa </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="invConjunto"></a>
 Invariante de la representación</h1>
-<p>El invariante es <em>datos</em>[n]; n&gt;=0</p>
+<p>El invariante es <em>rep.tripleta!=0</em> </p>
+<h1><a class="anchor" id="faConjunto"></a>
+Función de abstracción</h1>
+<p>Un objeto válido <em>rep</em> del TDA Matriz Dispersa representa a la estructura</p>
+<p>rep.m[&lt;0,0,'A'&gt;,&lt;0,1,'B'&gt;..&lt;i,j,'*'&gt;]</p>
+<h1><a class="anchor" id="invConjunto"></a>
+Invariante de la representación</h1>
+<p>El invariante es <em>rep.matriz.size()</em> &gt; 0</p>
+<h1><a class="anchor" id="faConjunto"></a>
+Función de abstracción</h1>
+<p>Un objeto válido <em>rep</em> del TDA Sopa de letras representa a la estructura</p>
+<p>rep.matriz[&lt;0,0,'V'&gt;,&lt;0,1,'A'&gt;..&lt;i,j,'*'&gt;]</p>
+<h1><a class="anchor" id="invConjunto"></a>
+Invariante de la representación</h1>
+<p>El invariante es <em>rep.n&gt;=0</em> </p>
 <h1><a class="anchor" id="faConjunto"></a>
 Función de abstracción</h1>
 <p>Un objeto válido <em>rep</em> del TDA Vector Dinámico representa a la estructura</p>
-<p>datos[n] </p>
+<p>rep.datos[n] </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

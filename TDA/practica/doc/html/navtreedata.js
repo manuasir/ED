@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "Practica2-ManuelJiménezBernal", "index.html", [
-    [ "Rep del TDA Vector Dinámico", "repConjunto.html", [
+    [ "Rep del TDA Matriz Dispersa", "repConjunto.html", [
       [ "Invariante de la representación", "repConjunto.html#invConjunto", null ],
       [ "Función de abstracción", "repConjunto.html#faConjunto", null ]
     ] ],

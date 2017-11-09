@@ -1,6 +1,9 @@
 
 Sopa_letras::Sopa_letras(){
+	nAcertadas=0;
+	nPendientes=0;
 }
+
 
 bool Sopa_letras::checkPalabraEnLista(string palabra){
 	bool condicion=false;
@@ -79,11 +82,17 @@ bool Sopa_letras::Comprobar_Palabra(string palabra,int i,int j,string dir){
     	}
     }
     
-    if(comprobar)
+    if(comprobar){
+    	cout << "comprobar es " << comprobar << endl;
     	if(!checkPalabraEnLista(palabra)){
+    		cout << "no esta" << endl;
     		comprobar=false;
     		acertadas.resize(indiceUltimaAcertada);
+    	} else {
+    		nAcertadas++;
+    		//nPendientes--;
     	}
+    }
     	
     return comprobar;
 }

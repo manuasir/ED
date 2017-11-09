@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rep_20del_20tda_20vector_20dinámico',['Rep del TDA Vector Dinámico',['../repConjunto.html',1,'']]]
+  ['rep_20del_20tda_20matriz_20dispersa',['Rep del TDA Matriz Dispersa',['../repConjunto.html',1,'']]]
 ];

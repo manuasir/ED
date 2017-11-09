@@ -3,8 +3,8 @@ var indexSectionsWithContent =
   0: "dgmnorstv~",
   1: "mstv",
   2: "mv",
-  3: "gosv~",
-  4: "dnr",
+  3: "gmorsv~",
+  4: "dmnrv",
   5: "r"
 };
 
