@@ -4,7 +4,6 @@ Sopa_letras::Sopa_letras(){
 	nPendientes=0;
 }
 
-
 bool Sopa_letras::checkPalabraEnLista(string palabra){
 	bool condicion=false;
 	for(int i=0;i<palabras.size();i++){

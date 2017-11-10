@@ -106,12 +106,13 @@ class Sopa_letras{
 		* @param sopa la referencia al objeto que llama al método
 		*/
 		friend ostream & operator<<(ostream & s, Sopa_letras & sopa){
+			s << "Titulo: " << sopa.getTitulo() << " Numero de palabras ocultas:" << sopa.palabras.size() << " Palabras descubiertas:" << sopa.getNumAcertadas() << '\n';
+
 			if(sopa.matriz.getMinCol() < 0 or sopa.matriz.getMinCol() > 9)
 				s << "    ";
 			else 
 				s << "     ";
 
-			s << "Titulo: " << sopa.getTitulo() << " Numero de palabras ocultas " << sopa.palabras.size() << " Palabras descubiertas" << sopa.getNumAcertadas() << '\n';
 			for(int i=sopa.matriz.getMinCol();i<=sopa.matriz.getMaxCol();i++){
 				if(i<10 || i<0)
 					s << i << "  ";
@@ -132,7 +133,8 @@ class Sopa_letras{
 						else
 							s << "\e[1m" << " " << sopa.matriz.Get(i,j) << " "  << "\e[0m";
 					} else {
-						s << "\e[1m" << " " << "X" << " " << "\e[0m";
+						char c = 'A' + rand()%26;
+						s << "\e[1m" << " " << c << " " << "\e[0m";
 					}
 				}		
 				s << '\n';
