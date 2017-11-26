@@ -1,13 +1,14 @@
-#ifndef _SOPA_LETRAS_H_
-#define _SOPA_LETRAS_H_
+#ifndef _DICCIONARIO_H_
+#define _DICCIONARIO_H_
 #include "./matriz_dispersa.h"
 #include <map>
+#include <vector>
 #include <iostream>
 #include <sstream>
 using namespace std;
 
 /**
-  *  @brief T.D.A. Sopa de Letras
+  *  @brief T.D.A. Diccionario
   *
   * Una instancia @e c del tipo de datos abstracto @c Sopa de Letras contiene un conjunto de palabras 
   * dispuesto en la direcciones verticales, horizontal o diagonal en una matriz dispersa.
@@ -23,7 +24,7 @@ using namespace std;
   */
 class Diccionario{
 	/**
-	* @page repConjunto Rep del TDA Sopa de letras
+	* @page repConjunto Rep del TDA Diccionario
 	*
 	* @section invConjunto Invariante de la representación
 	*
@@ -36,16 +37,34 @@ class Diccionario{
 	* rep.matriz[<0,0,'V'>,<0,1,'A'>..<i,j,'*'>]
 	*
 	*/
+	
 	private:
-
+	map<string,vector<string> > diccionario;
 
 	public:
+		class iterator;
+		class iterator{
+		private:
+			map<string,vector<string> >::iterator it;
+		public:
+			iterator(){};
+			pair<string,vector<string> > & operator*(){
+				return *it;
+			}
+
+			friend class Diccionario;
+		};
+		iterator ite;
 		/**
 		* @brief Constructor
 		* Crea un objeto de la clase Sopa de letras 
 		*/
 		Diccionario();
-
+		iterator begin(){
+			iterator i;
+			i.it=diccionario.begin();
+			return i;
+		}
 
 };
 

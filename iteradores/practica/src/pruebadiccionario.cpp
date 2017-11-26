@@ -3,11 +3,12 @@
 #include <iostream>
 #include <string>
 using namespace std;
-/*
+
 ostream & operator<<(ostream & os, const pair<string,string> & p){
   os<<p.first<<";"<<p.second<<endl;
   return os;
 }
+/*
 void ImprimirDiccionario(Diccionario &D){
   Diccionario::iterator it;
   for (it=D.begin(); it!=D.end();++it){
