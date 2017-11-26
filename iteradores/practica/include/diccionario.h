@@ -46,11 +46,13 @@ class Diccionario{
 		class iterator{
 		private:
 			map<string,vector<string> >::iterator it;
+			vector<int>::iterator ite;
+			int uno;
 		public:
-			iterator(){};
-			pair<string,vector<string> > & operator*(){
+			iterator();
+			const pair<string,vector<string> > & operator*()const{
 				return *it;
-			}
+			};
 
 			friend class Diccionario;
 		};
