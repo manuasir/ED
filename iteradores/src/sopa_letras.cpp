@@ -6,8 +6,8 @@ Sopa_letras::Sopa_letras(){
 
 bool Sopa_letras::checkPalabraEnLista(string palabra){
 	bool condicion=false;
-	for(int i=0;i<palabras.size();i++){
-		if(palabras[i] == palabra)
+	for(it=palabras.begin();it!=palabras.end();++it){
+		if((*it) == palabra)
 			condicion=true;
 	}
 	return condicion;

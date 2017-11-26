@@ -1,7 +1,7 @@
 #ifndef _SOPA_LETRAS_H_
 #define _SOPA_LETRAS_H_
 #include "./matriz_dispersa.h"
-#include "./vd.h"
+#include <list>
 #include <iostream>
 #include <sstream>
 using namespace std;
@@ -40,8 +40,9 @@ class Sopa_letras{
 		string titulo; /**< el título de la sopa de letras */
 		Matriz_Dispersa<char> matriz; /**< la matriz dispersa */
 		Matriz_Dispersa<bool> acertadas; /**< mapa espejo para controlar las compatibilidades y acertadas */
-		VD<string> palabras; /**< las palabras cargadas */
-		VD<string> palabras_acertadas; /**< las palabras acertadas */
+		list<string> palabras; /**< las palabras cargadas */
+		list<string> palabras_acertadas; /**< las palabras acertadas */
+		list<string>::iterator it;
 		int nAcertadas; /**< el número de acertadas */
 		int nPendientes; /**< el número de pendientes */
 
@@ -93,7 +94,7 @@ class Sopa_letras{
 		* @brief Incluir una palabra en la lista de acertadas
 		* @param palabra La palabra a incluir
 		*/
-		void Poner_Acertada(string palabra,int i,int j,string dir){ palabras_acertadas.set(palabra); }		/**
+		void Poner_Acertada(string palabra,int i,int j,string dir){ palabras_acertadas.push_back(palabra); }		/**
 		* @brief Comprueba que la sucesión de letras que ha introducido corresponde a una palabra de la lista
 		* @param palabra La palabra que se quiere comprobar
 		*/
@@ -164,7 +165,7 @@ class Sopa_letras{
 				strcpy(palabra_char, palabra.c_str());
 				bool puedeInsertarse=true;
 
-		    	sopa.palabras.set(palabra);
+		    	sopa.palabras.push_back(palabra);
 			    if(dir == "hi"){ // horizontal izquierda
 			    	int inc = j;
 			    	for (unsigned int index=0;index<palabra.length();index++,inc--){

@@ -7,13 +7,19 @@ CXX = g++
 CPPFLAGS = -Wall -g  -I$(INC) -c -std=c++11
 
 
-all: $(BIN)/prueba_matriz_dispersa
+all: $(BIN)/prueba_sopa_letras
 # ************ Generación de documentación ******************
 documentacion:
 	doxygen doc/doxys/Doxyfile
 
 
 # ************ Compilación de módulos ************
+$(BIN)/prueba_sopa_letras: $(OBJ)/prueba_sopa_letras.o
+	$(CXX) -o $(BIN)/prueba_sopa_letras $(OBJ)/prueba_sopa_letras.o 
+	
+$(OBJ)/prueba_sopa_letras.o: $(SRC)/prueba_sopa_letras.cpp $(INC)/matriz_dispersa.h 
+	$(CXX) $(CPPFLAGS)  $(SRC)/prueba_sopa_letras.cpp -o  $(OBJ)/prueba_sopa_letras.o 
+
 $(BIN)/prueba_matriz_dispersa: $(OBJ)/prueba_matriz_dispersa.o
 	$(CXX) -o $(BIN)/prueba_matriz_dispersa $(OBJ)/prueba_matriz_dispersa.o 
 	
