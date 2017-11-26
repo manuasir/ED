@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+/*
 ostream & operator<<(ostream & os, const pair<string,string> & p){
   os<<p.first<<";"<<p.second<<endl;
   return os;
@@ -14,13 +14,14 @@ void ImprimirDiccionario(Diccionario &D){
     cout<<*it<<endl;
   }
 }
+*/
 int main(int argc, char * argv[]){
 
   if (argc!=2){
     cout<<"Dime el nombre del fichero con el diccionario"<<endl;
     return 0;
   }
-
+/*
   ifstream f (argv[1]);
   if (!f){
     cout<<"No puedo abrir el fichero "<<argv[1]<<endl;
@@ -40,5 +41,5 @@ int main(int argc, char * argv[]){
 
 
   ImprimirDiccionario(Dtema);
-
+*/
 }

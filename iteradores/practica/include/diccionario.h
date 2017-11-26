@@ -1,0 +1,54 @@
+#ifndef _SOPA_LETRAS_H_
+#define _SOPA_LETRAS_H_
+#include "./matriz_dispersa.h"
+#include <map>
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+/**
+  *  @brief T.D.A. Sopa de Letras
+  *
+  * Una instancia @e c del tipo de datos abstracto @c Sopa de Letras contiene un conjunto de palabras 
+  * dispuesto en la direcciones verticales, horizontal o diagonal en una matriz dispersa.
+  * Se representa:
+  *
+  * [{fila1,columna1,letra},...,{filaN,columnaN,valorN}]
+  *
+  * Un ejemplo de su uso:
+  * @include prueba_sp.cpp
+  *
+  * @author Manuel Jiménez Bernal
+  * @date Octubre 2017
+  */
+class Diccionario{
+	/**
+	* @page repConjunto Rep del TDA Sopa de letras
+	*
+	* @section invConjunto Invariante de la representación
+	*
+	* El invariante es \e rep.matriz.size() > 0
+	*
+	* @section faConjunto Función de abstracción
+	*
+	* Un objeto válido @e rep del TDA Sopa de letras representa a la estructura
+	* 
+	* rep.matriz[<0,0,'V'>,<0,1,'A'>..<i,j,'*'>]
+	*
+	*/
+	private:
+
+
+	public:
+		/**
+		* @brief Constructor
+		* Crea un objeto de la clase Sopa de letras 
+		*/
+		Diccionario();
+
+
+};
+
+
+#include "../src/diccionario.cpp"
+#endif
