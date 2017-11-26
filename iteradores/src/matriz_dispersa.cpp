@@ -18,11 +18,10 @@ void Matriz_Dispersa<T>::Set(int i,int j,T dato){
 template <class T>
 T Matriz_Dispersa<T>::Get(int fil,int co){
 	T dato = valor_defecto;
-	for(it = theList.begin();it<theList.end();++it){
+	for(it = theList.begin();it!=theList.end();++it){
 		//cout << "haciendo get de " << m.size() <<  endl;
-
-		if(theList[it].fila == fil && theList[it].col == co){
-			dato = theList[it].d;
+		if((*it).fila == fil && (*it).col == co){
+			dato = (*it).d;
 		}
 	}
 	return dato;
@@ -31,20 +30,21 @@ T Matriz_Dispersa<T>::Get(int fil,int co){
 template <class T>
 int Matriz_Dispersa<T>::getMinCol(){
 	it = theList.begin();
-	int minCol=theList[it].col;
-	for(it = theList.begin();it<theList.end();it++){
-		if(theList[it].col < minCol)
-			minCol=theList[it].col;
+	int minCol=(*it).col;
+	for(it = theList.begin();it!=theList.end();it++){
+		if((*it).col < minCol)
+			minCol=(*it).col;
 	}
 	return minCol;
 }
-/*
+
 template <class T>
 int Matriz_Dispersa<T>::getMaxCol(){
-	int maxCol=m[0].col;
-	for(int i=0;i<m.size();i++){
-		if(m[i].col > maxCol){
-			maxCol=m[i].col;
+	it = theList.begin();
+	int maxCol=(*it).col;
+	for(it = theList.begin();it!=theList.end();it++){
+		if((*it).col > maxCol){
+			maxCol=(*it).col;
 		}
 	}
 	return maxCol;
@@ -52,20 +52,22 @@ int Matriz_Dispersa<T>::getMaxCol(){
 
 template <class T>
 int Matriz_Dispersa<T>::getMaxFila(){
-	int maxFila=m[0].fila;
-	for(int i=0;i<m.size();i++){
-		if(m[i].fila > maxFila)
-			maxFila=m[i].fila;
+	it = theList.begin();
+	int maxFila=(*it).fila;
+	for(it = theList.begin();it!=theList.end();it++){
+		if((*it).fila > maxFila)
+			maxFila=(*it).fila;
 	}
 	return maxFila;
 }
 
 template <class T>
 int Matriz_Dispersa<T>::getMinFila(){
-	int minFila=m[0].fila;
-	for(int i=0;i<m.size();i++){
-		if(m[i].fila < minFila)
-			minFila=m[i].fila;
+	it = theList.begin();
+	int minFila=(*it).fila;
+	for(it = theList.begin();it!=theList.end();it++){
+		if((*it).fila < minFila)
+			minFila=(*it).fila;
 	}
 	return minFila;
 }
@@ -82,4 +84,3 @@ int Matriz_Dispersa<T>::getNumCols(){
 
 	return getMaxCol()-getMinCol();
 }
-*/
