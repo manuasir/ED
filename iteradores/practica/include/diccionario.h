@@ -73,8 +73,15 @@ class Diccionario{
 
 		Diccionario ObtainPalabrasconDeficionContiene(string key){
 			Diccionario aux;
-			iterator iterator;
-
+			iterator ite;
+			for(ite=begin();ite!=end();++ite){
+				for(int i = 0;i<int((*ite).second.size());i++){
+					if ((*ite).second[i].find(key) != std::string::npos) {
+						// cout << (*ite).second[i] << endl;
+					    aux.set(key,(*ite).second[i]);
+					}
+				}
+			}
 			
 			return aux;
 		}

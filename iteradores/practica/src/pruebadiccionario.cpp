@@ -12,8 +12,8 @@ ostream & operator<<(ostream & os, const pair<string,string> & p){
 void ImprimirDiccionario(Diccionario &D){
   Diccionario::iterator it;
   for (it=D.begin(); it!=D.end();++it){
-    //cout<<(*it).first<<endl;
-   cout<<"uno"<<endl;
+    for(int i = 0;i<int((*it).second.size());i++)
+      cout<<"una definicion: " << (*it).second[i]<<endl;
   }
 }
 
