@@ -9,8 +9,13 @@ ostream & operator<<(ostream & os, const pair<string,string> & p){
   return os;
 }
 
-
-
+void ImprimirDiccionario(Diccionario &D){
+  Diccionario::iterator it;
+  for (it=D.begin(); it!=D.end();++it){
+    //cout<<*it<<endl;
+   cout<<"uno"<<endl;
+  }
+}
 
 int main(int argc, char * argv[]){
 
@@ -18,7 +23,7 @@ int main(int argc, char * argv[]){
     cout<<"Dime el nombre del fichero con el diccionario"<<endl;
     return 0;
   }
-/*
+
   ifstream f (argv[1]);
   if (!f){
     cout<<"No puedo abrir el fichero "<<argv[1]<<endl;
@@ -26,11 +31,14 @@ int main(int argc, char * argv[]){
   }
 
   Diccionario T;
+
   f>>T; //Cargamos en memoria el diccionario
+
   cout<<T;
+
   string a;
 
-
+/*
   cout<<"********Dime un tema:";
   getline(cin,a);
   cout<<endl<<endl<<"************Palabras con ese tema:"<<endl;

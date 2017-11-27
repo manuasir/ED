@@ -5,6 +5,8 @@
 #include <vector>
 #include <iostream>
 #include <sstream>
+#include <string>
+
 using namespace std;
 
 /**
@@ -23,6 +25,7 @@ using namespace std;
   * @date Octubre 2017
   */
 class Diccionario{
+	
 	/**
 	* @page repConjunto Rep del TDA Diccionario
 	*
@@ -42,30 +45,74 @@ class Diccionario{
 	map<string,vector<string> > diccionario;
 
 	public:
-		class iterator;
-		class iterator{
-		private:
-			map<string,vector<string> >::iterator it;
-			vector<int>::iterator ite;
-			int uno;
-		public:
-			iterator();
-			const pair<string,vector<string> > & operator*()const{
-				return *it;
-			};
-
-			friend class Diccionario;
-		};
-		iterator ite;
 		/**
 		* @brief Constructor
-		* Crea un objeto de la clase Sopa de letras 
+		* Crea un objeto de la clase Diccionario
 		*/
-		Diccionario();
+		Diccionario(){};
+
+		//class iterator;
+		class iterator{
+			private:
+				map<string,vector<string> >::iterator it;
+			public:
+				iterator(){};
+				pair<string,vector<string>> operator*(){ return *it; }
+				iterator & operator++(){ ++it; return *this; }
+				bool operator!=(const iterator & i){ return i.it!=it; }
+				bool operator==(const iterator & i){ return i.it==it; }
+
+				friend class Diccionario;
+		};
+
 		iterator begin(){
 			iterator i;
 			i.it=diccionario.begin();
 			return i;
+		}
+
+		iterator end(){
+			iterator i;
+			i.it=diccionario.end();
+			return i;
+		}
+
+		/**
+		* @brief Sobrecarga del operador <<
+		* Imprime la sopa de letras
+		* @param s el flujo de salida
+		* @param sopa la referencia al objeto que llama al método
+		*/
+		friend ostream & operator<<(ostream & s, Diccionario & diccionario){
+			Diccionario::iterator ite;
+			for(ite=diccionario.begin();ite!=diccionario.end();++ite){
+				s << "palabra: " << (*ite).first << endl;
+				for(int i = 0;i<(*ite).second.size();i++){
+					s << "una definición : " << (*ite).second[i] << endl;
+				}
+			}
+			return s;
+		}
+
+		/**
+		* @brief Sobrecarga del operador >>
+		* Lee la sopa de letras a partir de un fichero. Comprueba que todas las palabras son aptas para introducir.
+		* Esto significa que si dos palabras se cruzan, ha de ser por una letra en común.
+		* @param is el flujo de entrada
+		* @param sopa la referencia al objeto que llama al método
+		*/
+		friend istream & operator>>(istream & is, Diccionario & diccionario) {
+			string line;
+			while (getline(is, line)) {
+			//	cout << "UNA LINE: " << line << endl;
+			//	cout << "PRIMERA PALABRA " << line.substr(0, line.find(';')) << endl;
+				string palabra = line.substr(0, line.find(';'));
+				//cout << "UNA DEFINICION: " << line.substr((line.find(';')+1), line.size()) << endl;
+				string definicion = line.substr(line.find(';')+1, line.size());
+				diccionario.diccionario[palabra].push_back(definicion);
+			}
+			
+		    return is;
 		}
 
 };
