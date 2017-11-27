@@ -43,13 +43,41 @@ class Diccionario{
 	
 	private:
 	map<string,vector<string> > diccionario;
-
 	public:
 		/**
 		* @brief Constructor
 		* Crea un objeto de la clase Diccionario
 		*/
 		Diccionario(){};
+		class iterator;
+
+		iterator begin(){
+			iterator i;
+			i.it=diccionario.begin();
+			return i;
+		}
+
+		iterator end(){
+			iterator i;
+			i.it=diccionario.end();
+			return i;
+		}
+
+		void set(string key,string value){
+			diccionario[key].push_back(value);
+		}
+
+		vector<string> get(string key){
+			return diccionario[key];
+		}
+
+		Diccionario ObtainPalabrasconDeficionContiene(string key){
+			Diccionario aux;
+			iterator iterator;
+
+			
+			return aux;
+		}
 
 		//class iterator;
 		class iterator{
@@ -65,18 +93,6 @@ class Diccionario{
 				friend class Diccionario;
 		};
 
-		iterator begin(){
-			iterator i;
-			i.it=diccionario.begin();
-			return i;
-		}
-
-		iterator end(){
-			iterator i;
-			i.it=diccionario.end();
-			return i;
-		}
-
 		/**
 		* @brief Sobrecarga del operador <<
 		* Imprime la sopa de letras
@@ -87,8 +103,8 @@ class Diccionario{
 			Diccionario::iterator ite;
 			for(ite=diccionario.begin();ite!=diccionario.end();++ite){
 				s << "palabra: " << (*ite).first << endl;
-				for(int i = 0;i<(*ite).second.size();i++){
-					s << "una definición : " << (*ite).second[i] << endl;
+				for(int i = 0;i<int((*ite).second.size());i++){
+					s << "definición : " << (*ite).second[i] << endl;
 				}
 			}
 			return s;
@@ -104,12 +120,9 @@ class Diccionario{
 		friend istream & operator>>(istream & is, Diccionario & diccionario) {
 			string line;
 			while (getline(is, line)) {
-			//	cout << "UNA LINE: " << line << endl;
-			//	cout << "PRIMERA PALABRA " << line.substr(0, line.find(';')) << endl;
 				string palabra = line.substr(0, line.find(';'));
-				//cout << "UNA DEFINICION: " << line.substr((line.find(';')+1), line.size()) << endl;
 				string definicion = line.substr(line.find(';')+1, line.size());
-				diccionario.diccionario[palabra].push_back(definicion);
+				diccionario.set(palabra,definicion);
 			}
 			
 		    return is;

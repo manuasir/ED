@@ -12,7 +12,7 @@ ostream & operator<<(ostream & os, const pair<string,string> & p){
 void ImprimirDiccionario(Diccionario &D){
   Diccionario::iterator it;
   for (it=D.begin(); it!=D.end();++it){
-    //cout<<*it<<endl;
+    //cout<<(*it).first<<endl;
    cout<<"uno"<<endl;
   }
 }
@@ -34,17 +34,18 @@ int main(int argc, char * argv[]){
 
   f>>T; //Cargamos en memoria el diccionario
 
-  cout<<T;
+  //cout<<T;
 
   string a;
 
-/*
+
   cout<<"********Dime un tema:";
   getline(cin,a);
   cout<<endl<<endl<<"************Palabras con ese tema:"<<endl;
+
   Diccionario Dtema = T.ObtainPalabrasconDeficionContiene(a);
 
 
   ImprimirDiccionario(Dtema);
-*/
+
 }
