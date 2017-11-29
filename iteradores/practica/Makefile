@@ -7,7 +7,7 @@ CXX = g++
 CPPFLAGS = -Wall -g  -I$(INC) -c -std=c++11
 
 
-all: $(BIN)/prueba_sopa_letras
+all: $(BIN)/sp2
 # ************ Generación de documentación ******************
 documentacion:
 	doxygen doc/doxys/Doxyfile

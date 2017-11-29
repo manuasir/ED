@@ -4,8 +4,8 @@
 #include "../include/diccionario.h"
 int main(int argc, char * argv[]){
  
-  if (argc!=2){
-    cout<<"Dime el nombre del fichero con las palabras de la sopa de letras"<<endl;
+  if (argc!=3){
+    cout<<"Dime el nombre del fichero con las palabras de la sopa de letras, la palabra"<<endl;
     return 0;
   }
   ifstream f(argv[1]);
