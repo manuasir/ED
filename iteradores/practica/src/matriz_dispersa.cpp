@@ -7,8 +7,6 @@ Matriz_Dispersa<T>::Matriz_Dispersa() {
 
 template <class T>
 void Matriz_Dispersa<T>::Set(int i,int j,T dato){
-	cout << "seteando en fila: " << i << " columna: " << j << " valor: " << dato << endl;
-	//cout << "max fila " << getMaxFila() << " max col: " << getMaxCol() << " valor: " << dato << endl;
 	tripleta aux;
 	aux.fila=i;
 	aux.col=j;
