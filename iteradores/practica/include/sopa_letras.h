@@ -100,6 +100,8 @@ class Sopa_letras{
 		*/
 		bool checkPalabraEnLista(string palabra);
 
+		void addPalabra(int i,int j,string palabra,string dir);
+
 		/**
 		* @brief Sobrecarga del operador <<
 		* Imprime la sopa de letras
@@ -156,94 +158,12 @@ class Sopa_letras{
 			while (std::getline(is, line))
 			{
 			    istringstream iss(line);
-			    int i, j;
+			    
 			    string dir,palabra;
-			   
+			   	int i,j;
 			    if (!(iss >> i >> j >> dir >> palabra)) { break; } // error
-			    //cout << "!! " << palabra << " i:" << i << endl;
-			    char * palabra_char = new char[palabra.length() + 1];
-				strcpy(palabra_char, palabra.c_str());
-				bool puedeInsertarse=true;
-
-		    	sopa.palabras.push_back(palabra);
-			    if(dir == "hi"){ // horizontal izquierda
-			    	int inc = j;
-			    	for (unsigned int index=0;index<palabra.length();index++,inc--){
-	    				if(sopa.matriz.Get(i,inc) != sopa.matriz.getValorDefecto() and sopa.matriz.Get(i,inc) != palabra_char[index]){
-	    					puedeInsertarse=false;
-	    				}
-			    	}
-			    	if(puedeInsertarse)
-					    for (unsigned int index=0;index<palabra.length();index++,j--){
-		    				sopa.matriz.Set(i,j,palabra_char[index]);
-					    }
-				}
-			    else if (dir == "hd"){ // horizontal derecha
-			    	int inc=j;
-			    	for (unsigned int index=0;index<palabra.length();index++,inc++){
-	    				if(sopa.matriz.Get(i,inc) != sopa.matriz.getValorDefecto() and sopa.matriz.Get(i,inc) != palabra_char[index]){
-	    					puedeInsertarse=false;
-	    				}
-			    	}
-			    	if(puedeInsertarse)
-				    	for (unsigned int index=0;index<palabra.length();index++,j++){
-		    				sopa.matriz.Set(i,j,palabra_char[index]);
-				    	}
-			    }
-    			else if (dir == "vu"){ // vertical arriba
-    				int inc = i;
-    				for (unsigned int index=0;index<palabra.length();index++,inc--){
-	    				if(sopa.matriz.Get(inc,j) != sopa.matriz.getValorDefecto() and sopa.matriz.Get(inc,j) != palabra_char[index]){
-	    					puedeInsertarse=false;
-	    				}
-			    	}
-			    	if(puedeInsertarse)
-				    	for (unsigned int index=0;index<palabra.length();index++,i--){
-		    				sopa.matriz.Set(i,j,palabra_char[index]);
-				    	}
-			    }
-    			else if (dir == "vd"){ // vertical abajo
-    				int inc = i;
-    				for (unsigned int index=0;index<palabra.length();index++,inc++){
-	    				if(sopa.matriz.Get(inc,j) != sopa.matriz.getValorDefecto() and sopa.matriz.Get(inc,j) != palabra_char[index] and sopa.matriz.Get(inc,j) != '\0'){
-	    					puedeInsertarse=false;
-	    				}
-			    	}
-			    	if(puedeInsertarse)
-				    	for (unsigned int index=0;index<palabra.length();index++,i++){
-		    				sopa.matriz.Set(i,j,palabra_char[index]);
-				    	}
-			    }
-    			else if (dir == "dd"){ // diagonal abajo derecha
-    				int inci = i;
-    				int incj = j;
-    				for (unsigned int index=0;index<palabra.length();index++,inci++,incj++){
-	    				if(sopa.matriz.Get(inci,incj) != sopa.matriz.getValorDefecto() and sopa.matriz.Get(inci,incj) != palabra_char[index]){
-	    					puedeInsertarse=false;
-	    				}
-			    	}
-			    	if(puedeInsertarse)
-				    	for (unsigned int index=0;index<palabra.length();index++,i++,j++){
-		    				sopa.matriz.Set(i,j,palabra_char[index]);
-				    	}
-			    }
-    			else if (dir == "di"){ // diagonal abajo izquierda
-    				int inci = i;
-    				int incj = j;
-    				for (unsigned int index=0;index<palabra.length();index++,inci++,incj--){
-	    				if(sopa.matriz.Get(inci,incj) != sopa.matriz.getValorDefecto() and sopa.matriz.Get(inci,incj) != palabra_char[index]){
-	    					puedeInsertarse=false;
-	    				}
-			    	}
-			    	if(puedeInsertarse){
-				    	for (unsigned int index=0;index<palabra.length();index++,i++,j--){
-		    				sopa.matriz.Set(i,j,palabra_char[index]);
-				    	}
-				    	
-				    }
-			    }
-				delete[] palabra_char;
-
+			    // añadir una palabra sólo si es posible hacerlo
+				sopa.addPalabra(i,j,palabra,dir);
 			}
 
 		    return is;
