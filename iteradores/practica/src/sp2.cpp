@@ -5,13 +5,22 @@
 #include "../include/sopa_letras.h"
 #include "../include/diccionario.h"
 
+string toUpper(string str){
+  for(int i=0;str[i]!=0;i++){
+    if(str[i]<=122 && str[i]>=97){
+      str[i]-=32;
+    }
+  }
+  return str;
+}
 
 list<string> extraerPalabras(Diccionario &D){
   Diccionario::iterator it;
   list<string> palabras;
   for (it=D.begin(); it!=D.end();++it){
     for(int i = 0;i<int((*it).second.size());i++){
-      palabras.push_back( (*it).first);
+      string aux = toUpper((*it).first);
+      palabras.push_back(aux);
     }
   }
   return palabras;
@@ -40,7 +49,7 @@ int main(int argc, char * argv[]){
   Diccionario::iterator it;
   list<string> palabras = extraerPalabras(Dtema);
   list<string>::iterator listIterator;
-  //int fila,columna,maxPalabras;
+
 
   for(listIterator=palabras.begin();listIterator!=palabras.end() and indiceActual<maxPalabras;++listIterator){
     cout << "una palabra: " << (*listIterator) << endl;
@@ -54,7 +63,7 @@ int main(int argc, char * argv[]){
       case 4: dir = "dd"; break;
       case 5: dir = "di"; break;
     }
-    Sl.addPalabra(5,5,(*listIterator),dir);
+    Sl.addPalabra(rand()%20,rand()%20,(*listIterator),dir);
     indiceActual++;
   }
   //El usuario ahora tiene que ir descubriendo las palabras
