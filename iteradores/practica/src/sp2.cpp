@@ -5,6 +5,7 @@
 #include "../include/sopa_letras.h"
 #include "../include/diccionario.h"
 
+
 list<string> extraerPalabras(Diccionario &D){
   Diccionario::iterator it;
   list<string> palabras;
@@ -31,8 +32,8 @@ int main(int argc, char * argv[]){
   Sopa_letras Sl;
   Diccionario T;
   string word(argv[2]);
-  cout << "daword " << word << endl;
-
+  int maxPalabras = atoi(argv[3]);
+  int indiceActual = 0;
   f>>T; //Cargamos en memoria el diccionario
 
   Diccionario Dtema = T.ObtainPalabrasconDeficionContiene(word);
@@ -40,7 +41,8 @@ int main(int argc, char * argv[]){
   list<string> palabras = extraerPalabras(Dtema);
   list<string>::iterator listIterator;
   //int fila,columna,maxPalabras;
-  for(listIterator=palabras.begin();listIterator!=palabras.end();++listIterator){
+
+  for(listIterator=palabras.begin();listIterator!=palabras.end() and indiceActual<maxPalabras;++listIterator){
     cout << "una palabra: " << (*listIterator) << endl;
     string dir;
     int randomDir = rand()%5;
@@ -52,7 +54,8 @@ int main(int argc, char * argv[]){
       case 4: dir = "dd"; break;
       case 5: dir = "di"; break;
     }
-    Sl.addPalabra(rand()%20,rand()%20,(*listIterator),dir);
+    Sl.addPalabra(5,5,(*listIterator),dir);
+    indiceActual++;
   }
   //El usuario ahora tiene que ir descubriendo las palabras
   //en la sopa de letras
