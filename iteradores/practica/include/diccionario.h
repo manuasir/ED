@@ -12,7 +12,7 @@ using namespace std;
 /**
   *  @brief T.D.A. Diccionario
   *
-  * Una instancia @e c del tipo de datos abstracto @c Sopa de Letras contiene un conjunto de palabras 
+  * Una instancia @e c del tipo de datos abstracto @c Sopa de Letras contiene un conjunto de palabras
   * dispuesto en la direcciones verticales, horizontal o diagonal en una matriz dispersa.
   * Se representa:
   *
@@ -25,7 +25,7 @@ using namespace std;
   * @date Octubre 2017
   */
 class Diccionario{
-	
+
 	/**
 	* @page repConjunto Rep del TDA Diccionario
 	*
@@ -36,11 +36,11 @@ class Diccionario{
 	* @section faConjunto Función de abstracción
 	*
 	* Un objeto válido @e rep del TDA Sopa de letras representa a la estructura
-	* 
+	*
 	* rep.matriz[<0,0,'V'>,<0,1,'A'>..<i,j,'*'>]
 	*
 	*/
-	
+
 	private:
 	map<string,vector<string> > diccionario;
 	public:
@@ -78,11 +78,11 @@ class Diccionario{
 				for(int i = 0;i<int((*ite).second.size());i++){
 					if ((*ite).second[i].find(key) != std::string::npos) {
 						// cout << (*ite).second[i] << endl;
-					    aux.set(key,(*ite).second[i]);
+					    aux.set((*ite).first,(*ite).second[i]);
 					}
 				}
 			}
-			
+
 			return aux;
 		}
 
@@ -131,7 +131,7 @@ class Diccionario{
 				string definicion = line.substr(line.find(';')+1, line.size());
 				diccionario.set(palabra,definicion);
 			}
-			
+
 		    return is;
 		}
 
