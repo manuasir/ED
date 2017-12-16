@@ -43,16 +43,15 @@ int main(int argc, char * argv[]){
   string word(argv[2]);
   int maxPalabras = atoi(argv[3]);
   int indiceActual = 0;
-  f>>T; //Cargamos en memoria el diccionario
+  f>>T; // Cargamos en memoria el diccionario
 
   Diccionario Dtema = T.ObtainPalabrasconDeficionContiene(word);
   Diccionario::iterator it;
   list<string> palabras = extraerPalabras(Dtema);
   list<string>::iterator listIterator;
 
-
   for(listIterator=palabras.begin();listIterator!=palabras.end() and indiceActual<maxPalabras;++listIterator){
-    cout << "una palabra: " << (*listIterator) << endl;
+    cout << "una definición: " << (*listIterator) << endl;
     string dir;
     int randomDir = rand()%5;
     switch(randomDir){
@@ -66,8 +65,8 @@ int main(int argc, char * argv[]){
     Sl.addPalabra(rand()%20,rand()%20,(*listIterator),dir);
     indiceActual++;
   }
-  //El usuario ahora tiene que ir descubriendo las palabras
-  //en la sopa de letras
+  // El usuario ahora tiene que ir descubriendo las palabras
+  // en la sopa de letras
   while (Sl.NumPalabras()!=0){
     cout<<Sl<<endl;
     string pal;
@@ -88,7 +87,7 @@ int main(int argc, char * argv[]){
       cout<<"La palabra "<<pal << " no esta"<<endl;
     } else{
       cout << "bien!" << endl;
-      //La pone en negrita. Ademas la pone dentro de la lista de palabras descubiertas.
+      // La pone en negrita. Ademas la pone dentro de la lista de palabras descubiertas.
       Sl.Poner_Acertada(pal,row,col,direccion);
     }
   }

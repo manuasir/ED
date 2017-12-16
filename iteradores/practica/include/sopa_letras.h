@@ -9,7 +9,7 @@ using namespace std;
 /**
   *  @brief T.D.A. Sopa de Letras
   *
-  * Una instancia @e c del tipo de datos abstracto @c Sopa de Letras contiene un conjunto de palabras 
+  * Una instancia @e c del tipo de datos abstracto @c Sopa de Letras contiene un conjunto de palabras
   * dispuesto en la direcciones verticales, horizontal o diagonal en una matriz dispersa.
   * Se representa:
   *
@@ -32,11 +32,12 @@ class Sopa_letras{
 	* @section faConjunto Función de abstracción
 	*
 	* Un objeto válido @e rep del TDA Sopa de letras representa a la estructura
-	* 
+	*
 	* rep.matriz[<0,0,'V'>,<0,1,'A'>..<i,j,'*'>]
 	*
 	*/
 	private:
+		
 		string titulo; /**< el título de la sopa de letras */
 		Matriz_Dispersa<char> matriz; /**< la matriz dispersa */
 		Matriz_Dispersa<bool> acertadas; /**< mapa espejo para controlar las compatibilidades y acertadas */
@@ -49,7 +50,7 @@ class Sopa_letras{
 	public:
 		/**
 		* @brief Constructor
-		* Crea un objeto de la clase Sopa de letras 
+		* Crea un objeto de la clase Sopa de letras
 		*/
 		Sopa_letras();
 		/**
@@ -65,7 +66,7 @@ class Sopa_letras{
 		* @brief Obtiene el titulo
 		*/
 		string getTitulo() { return titulo; }
-		
+
 		/**
 		* @brief Obtiene la mayor columna
 		*/
@@ -110,12 +111,10 @@ class Sopa_letras{
 		*/
 		friend ostream & operator<<(ostream & s, Sopa_letras & sopa){
 			s << "Titulo: " << sopa.getTitulo() << " Numero de palabras ocultas:" << sopa.palabras.size() << " Palabras descubiertas:" << sopa.getNumAcertadas() << '\n';
-
 			if(sopa.matriz.getMinCol() < 0 or sopa.matriz.getMinCol() > 9)
 				s << "    ";
-			else 
+			else
 				s << "     ";
-
 			for(int i=sopa.matriz.getMinCol();i<=sopa.matriz.getMaxCol();i++){
 				if(i<10 || i<0)
 					s << i << "  ";
@@ -139,7 +138,7 @@ class Sopa_letras{
 						char c = 'A' + rand()%26;
 						s << "\e[1m" << " " << c << " " << "\e[0m";
 					}
-				}		
+				}
 				s << '\n';
 			}
 			return s;
@@ -158,18 +157,15 @@ class Sopa_letras{
 			while (std::getline(is, line))
 			{
 			    istringstream iss(line);
-			    
 			    string dir,palabra;
 			   	int i,j;
 			    if (!(iss >> i >> j >> dir >> palabra)) { break; } // error
 			    // añadir una palabra sólo si es posible hacerlo
 				sopa.addPalabra(i,j,palabra,dir);
 			}
-
 		    return is;
 		}
 };
-
 
 #include "../src/sopa_letras.cpp"
 #endif
