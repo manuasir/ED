@@ -20,8 +20,6 @@ map<string,vector<string> > extraerPalabras(Diccionario &D){
   for (it=D.begin(); it!=D.end();++it){
     string aux = toUpper((*it).first);
     palabras[aux]=(*it).second;
-  //  for(int i = 0;i<int((*it).second.size());i++){
-    //}
   }
   return palabras;
 }
@@ -67,7 +65,7 @@ int main(int argc, char * argv[]){
   }
   // El usuario ahora tiene que ir descubriendo las palabras
   // en la sopa de letras
-  while (Sl.NumPalabras()!=0){
+  while (Sl.NumPalabras()!=0 and Sl.getNumAcertadas()<Sl.NumPalabras()){
     cout<<Sl<<endl;
     string pal;
     cout<<"Dime una palabra :";
@@ -75,14 +73,24 @@ int main(int argc, char * argv[]){
     cout<<"Dime la fila :";
     int row;
     cin>>row;
+    if (cin.fail()) {
+      cout << "La fila debe ser un número entero. Abortando." << endl;
+      return 1;
+    }
     cout<<"Dime la columna :";
     int col;
     cin>>col;
-
+    if (cin.fail()) {
+      cout << "La columna debe ser un número entero. Abortando." << endl;
+      return 1;
+    }
     cout<<"Direccion Arriba (vu), Abajo (vd), Izquierda (hi) , Derecha (hd), Diagonal abajo derecha (dd),Diagonal abajo izquierda (di) :";
-
     string direccion;
     cin>>direccion;
+    if(direccion != "vu" and direccion != "vd" and direccion != "hi" and direccion != "hd" and direccion != "dd" and direccion != "di" ) {
+      cout << "Debe tener el siguiente formato: Arriba (vu), Abajo (vd), Izquierda (hi) , Derecha (hd), Diagonal abajo derecha (dd),Diagonal abajo izquierda (di)"<< endl;
+      return 1;
+    }
     if (!Sl.Comprobar_Palabra(pal,row,col,direccion)){
       cout<<"La palabra "<<pal << " no esta"<<endl;
     } else{
