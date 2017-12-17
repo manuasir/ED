@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Practica3-ManuelJiménezBernal: Fichero Fuente include/diccionario.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Practica3-ManuelJiménezBernal
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Sopadeletras</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('df/d7c/diccionario_8h_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">diccionario.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _DICCIONARIO_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _DICCIONARIO_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="../../de/de6/matriz__dispersa_8h.html">./matriz_dispersa.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../df/d00/classDiccionario.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d00/classDiccionario.html">Diccionario</a>{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../df/d00/classDiccionario.html#a64fd483d95f0ce3a8813d43f7efbb6e0">   45</a></span>&#160;    map&lt;string,vector&lt;string&gt; &gt; <a class="code" href="../../df/d00/classDiccionario.html#a64fd483d95f0ce3a8813d43f7efbb6e0">diccionario</a>; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../df/d00/classDiccionario.html#aa0a2191ec706b256c35b5229cc197b15">   51</a></span>&#160;    <a class="code" href="../../df/d00/classDiccionario.html#aa0a2191ec706b256c35b5229cc197b15">Diccionario</a>(){};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">class </span>iterator; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../df/d00/classDiccionario.html#a3f42d480e74efbd66b8837d0ea1e491d">   59</a></span>&#160;    <a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">iterator</a> <a class="code" href="../../df/d00/classDiccionario.html#a3f42d480e74efbd66b8837d0ea1e491d">begin</a>(){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">iterator</a> i;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        i.it=diccionario.begin();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../df/d00/classDiccionario.html#abe91cc666c92f7f003507a82bdcd8c35">   68</a></span>&#160;    <a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">iterator</a> <a class="code" href="../../df/d00/classDiccionario.html#abe91cc666c92f7f003507a82bdcd8c35">end</a>(){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">iterator</a> i;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        i.it=diccionario.end();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../df/d00/classDiccionario.html#abc539d41a439727374df6951a7c81a2f">   77</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d00/classDiccionario.html#abc539d41a439727374df6951a7c81a2f">set</a>(<span class="keywordtype">string</span> key,<span class="keywordtype">string</span> value){</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        diccionario[key].push_back(value);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../df/d00/classDiccionario.html#a4012ca4dff64f5d1c9713dec3b2045d0">   86</a></span>&#160;    vector&lt;string&gt; <span class="keyword">get</span>(<span class="keywordtype">string</span> key){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> diccionario[key];</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../df/d00/classDiccionario.html">Diccionario</a> ObtainPalabrasconDeficionContiene(<span class="keywordtype">string</span> key);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">//class iterator;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../db/da1/classDiccionario_1_1iterator.html">   96</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">iterator</a>{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            map&lt;string,vector&lt;string&gt; &gt;<a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">::iterator</a> it;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">iterator</a>(){};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            pair&lt;string,vector&lt;string&gt;&gt; operator*(){ <span class="keywordflow">return</span> *it; }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">iterator</a> &amp; operator++(){ ++it; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">iterator</a> &amp; i){ <span class="keywordflow">return</span> i.it!=it; }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">iterator</a> &amp; i){ <span class="keywordflow">return</span> i.it==it; }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../df/d00/classDiccionario.html">Diccionario</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    };</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="../../df/d00/classDiccionario.html#af4542268d1014a04841cb22abe27287c">  114</a></span>&#160;    <span class="keyword">friend</span> ostream &amp; <a class="code" href="../../df/d00/classDiccionario.html#af4542268d1014a04841cb22abe27287c">operator&lt;&lt;</a>(ostream &amp; s, <a class="code" href="../../df/d00/classDiccionario.html">Diccionario</a> &amp; <a class="code" href="../../df/d00/classDiccionario.html#a64fd483d95f0ce3a8813d43f7efbb6e0">diccionario</a>){</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="../../db/da1/classDiccionario_1_1iterator.html">Diccionario::iterator</a> ite;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">for</span>(ite=diccionario.<a class="code" href="../../df/d00/classDiccionario.html#a3f42d480e74efbd66b8837d0ea1e491d">begin</a>();ite!=diccionario.<a class="code" href="../../df/d00/classDiccionario.html#abe91cc666c92f7f003507a82bdcd8c35">end</a>();++ite){</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            s &lt;&lt; <span class="stringliteral">&quot;palabra: &quot;</span> &lt;&lt; (*ite).first &lt;&lt; endl;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0;i&lt;int((*ite).second.size());i++){</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                s &lt;&lt; <span class="stringliteral">&quot;definición : &quot;</span> &lt;&lt; (*ite).second[i] &lt;&lt; endl;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="../../df/d00/classDiccionario.html#ab5fe1aaffb77eeef53396f18f303d6c7">  131</a></span>&#160;    <span class="keyword">friend</span> istream &amp; <a class="code" href="../../df/d00/classDiccionario.html#ab5fe1aaffb77eeef53396f18f303d6c7">operator&gt;&gt;</a>(istream &amp; is, <a class="code" href="../../df/d00/classDiccionario.html">Diccionario</a> &amp; <a class="code" href="../../df/d00/classDiccionario.html#a64fd483d95f0ce3a8813d43f7efbb6e0">diccionario</a>) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">string</span> line;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">while</span> (getline(is, line)) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordtype">string</span> palabra = line.substr(0, line.find(<span class="charliteral">&#39;;&#39;</span>));</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordtype">string</span> definicion = line.substr(line.find(<span class="charliteral">&#39;;&#39;</span>)+1, line.size());</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            diccionario.<a class="code" href="../../df/d00/classDiccionario.html#abc539d41a439727374df6951a7c81a2f">set</a>(palabra,definicion);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">return</span> is;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;};</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">#include &quot;../src/diccionario.cpp&quot;</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classDiccionario_html_ab5fe1aaffb77eeef53396f18f303d6c7"><div class="ttname"><a href="../../df/d00/classDiccionario.html#ab5fe1aaffb77eeef53396f18f303d6c7">Diccionario::operator&gt;&gt;</a></div><div class="ttdeci">friend istream &amp; operator&gt;&gt;(istream &amp;is, Diccionario &amp;diccionario)</div><div class="ttdoc">Sobrecarga del operador &gt;&gt; Lee el diccionario a partir de un fichero. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7c/diccionario_8h_source.html#l00131">diccionario.h:131</a></div></div>
+<div class="ttc" id="classDiccionario_html_abc539d41a439727374df6951a7c81a2f"><div class="ttname"><a href="../../df/d00/classDiccionario.html#abc539d41a439727374df6951a7c81a2f">Diccionario::set</a></div><div class="ttdeci">void set(string key, string value)</div><div class="ttdoc">Inserta una nueva palabra con su significado, si existiera añade un nuevo significado a esa clave...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7c/diccionario_8h_source.html#l00077">diccionario.h:77</a></div></div>
+<div class="ttc" id="classDiccionario_html_a64fd483d95f0ce3a8813d43f7efbb6e0"><div class="ttname"><a href="../../df/d00/classDiccionario.html#a64fd483d95f0ce3a8813d43f7efbb6e0">Diccionario::diccionario</a></div><div class="ttdeci">map&lt; string, vector&lt; string &gt; &gt; diccionario</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7c/diccionario_8h_source.html#l00045">diccionario.h:45</a></div></div>
+<div class="ttc" id="classDiccionario_html_af4542268d1014a04841cb22abe27287c"><div class="ttname"><a href="../../df/d00/classDiccionario.html#af4542268d1014a04841cb22abe27287c">Diccionario::operator&lt;&lt;</a></div><div class="ttdeci">friend ostream &amp; operator&lt;&lt;(ostream &amp;s, Diccionario &amp;diccionario)</div><div class="ttdoc">Sobrecarga del operador &lt;&lt; Imprime el diccionario. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7c/diccionario_8h_source.html#l00114">diccionario.h:114</a></div></div>
+<div class="ttc" id="classDiccionario_html_aa0a2191ec706b256c35b5229cc197b15"><div class="ttname"><a href="../../df/d00/classDiccionario.html#aa0a2191ec706b256c35b5229cc197b15">Diccionario::Diccionario</a></div><div class="ttdeci">Diccionario()</div><div class="ttdoc">Constructor Crea un objeto de la clase Diccionario. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7c/diccionario_8h_source.html#l00051">diccionario.h:51</a></div></div>
+<div class="ttc" id="classDiccionario_1_1iterator_html"><div class="ttname"><a href="../../db/da1/classDiccionario_1_1iterator.html">Diccionario::iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7c/diccionario_8h_source.html#l00096">diccionario.h:96</a></div></div>
+<div class="ttc" id="classDiccionario_html_abe91cc666c92f7f003507a82bdcd8c35"><div class="ttname"><a href="../../df/d00/classDiccionario.html#abe91cc666c92f7f003507a82bdcd8c35">Diccionario::end</a></div><div class="ttdeci">iterator end()</div><div class="ttdoc">Devuelve la última palabra del diccionario. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7c/diccionario_8h_source.html#l00068">diccionario.h:68</a></div></div>
+<div class="ttc" id="matriz__dispersa_8h_html"><div class="ttname"><a href="../../de/de6/matriz__dispersa_8h.html">matriz_dispersa.h</a></div><div class="ttdoc">Fichero cabecera del TDA Matriz Dispersa. </div></div>
+<div class="ttc" id="classDiccionario_html_a3f42d480e74efbd66b8837d0ea1e491d"><div class="ttname"><a href="../../df/d00/classDiccionario.html#a3f42d480e74efbd66b8837d0ea1e491d">Diccionario::begin</a></div><div class="ttdeci">iterator begin()</div><div class="ttdoc">Devuelve la primera palabra del Diccionario. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7c/diccionario_8h_source.html#l00059">diccionario.h:59</a></div></div>
+<div class="ttc" id="classDiccionario_html"><div class="ttname"><a href="../../df/d00/classDiccionario.html">Diccionario</a></div><div class="ttdoc">T.D.A. Diccionario. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7c/diccionario_8h_source.html#l00027">diccionario.h:27</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>diccionario.h</b></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>
