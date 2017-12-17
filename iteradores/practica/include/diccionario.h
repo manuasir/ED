@@ -12,17 +12,17 @@ using namespace std;
 /**
 *  @brief T.D.A. Diccionario
 *
-* Una instancia @e c del tipo de datos abstracto @c Sopa de Letras contiene un conjunto de palabras
-* dispuesto en la direcciones verticales, horizontal o diagonal en una matriz dispersa.
+* Una instancia @e c del tipo de datos abstracto @c Diccionario contiene un conjunto clave-valor de palabras
+* con sus significados asociados.
 * Se representa:
 *
-* [{fila1,columna1,letra},...,{filaN,columnaN,valorN}]
+* key : [values]
 *
 * Un ejemplo de su uso:
-* @include prueba_sp.cpp
+* @include pruebadiccionario.cpp
 *
 * @author Manuel Jiménez Bernal
-* @date Octubre 2017
+* @date Diciembre 2017
 */
 class Diccionario{
 
@@ -31,60 +31,67 @@ class Diccionario{
 	*
 	* @section invConjunto Invariante de la representación
 	*
-	* El invariante es \e rep.matriz.size() > 0
+	* El invariante es \e rep.diccionario.size() > 0
 	*
 	* @section faConjunto Función de abstracción
 	*
-	* Un objeto válido @e rep del TDA Sopa de letras representa a la estructura
+	* Un objeto válido @e rep del TDA Diccionario representa a la estructura
 	*
-	* rep.matriz[<0,0,'V'>,<0,1,'A'>..<i,j,'*'>]
+	* rep.diccionario[key] = [value1,value2,...,valueN]
 	*
 	*/
 
 private:
-	map<string,vector<string> > diccionario;
+	map<string,vector<string> > diccionario; /**< el mapa en que se almacena el diccionario */
 public:
 	/**
 	* @brief Constructor
 	* Crea un objeto de la clase Diccionario
 	*/
 	Diccionario(){};
-	class iterator;
 
+	class iterator; /**< pre-declaración de la clase iteradora sobre el diccionario */
+
+	/**
+	* @brief Devuelve la primera palabra del Diccionario
+	* @return iterator devuelve una instancia de iterador de la clase Diccionario
+	*/
 	iterator begin(){
 		iterator i;
 		i.it=diccionario.begin();
 		return i;
 	}
-
+	/**
+	* @brief Devuelve la última palabra del diccionario
+	* @return iterator devuelve una instancia de iterador de la clase Diccionario
+	*/
 	iterator end(){
 		iterator i;
 		i.it=diccionario.end();
 		return i;
 	}
 
+	/**
+	* @brief Inserta una nueva palabra con su significado, si existiera añade un nuevo significado a esa clave
+	*/
 	void set(string key,string value){
 		diccionario[key].push_back(value);
 	}
 
+	/**
+	* @brief Devuelve significados
+	* @param key la palabra de la cual se quiere extraer los significados
+	* @return devuelve los significados de esa palabra
+	*/
 	vector<string> get(string key){
 		return diccionario[key];
 	}
-
-	Diccionario ObtainPalabrasconDeficionContiene(string key){
-		Diccionario aux;
-		iterator ite;
-		for(ite=begin();ite!=end();++ite){
-			for(int i = 0;i<int((*ite).second.size());i++){
-				if ((*ite).second[i].find(key) != std::string::npos) {
-					// cout << (*ite).second[i] << endl;
-					aux.set((*ite).first,(*ite).second[i]);
-				}
-			}
-		}
-		return aux;
-	}
-
+	/**
+	* @brief Crea un diccionario a partir de otro
+	* @param key la palabra de la cual se quiere generar un diccionario
+	* @return nuevo diccionario
+	*/
+	Diccionario ObtainPalabrasconDeficionContiene(string key);
 	//class iterator;
 	class iterator{
 		private:
@@ -100,9 +107,9 @@ public:
 
 	/**
 	* @brief Sobrecarga del operador <<
-	* Imprime la sopa de letras
+	* Imprime el diccionario
 	* @param s el flujo de salida
-	* @param sopa la referencia al objeto que llama al método
+	* @param diccionario la referencia al objeto que llama al método
 	*/
 	friend ostream & operator<<(ostream & s, Diccionario & diccionario){
 		Diccionario::iterator ite;
@@ -117,10 +124,9 @@ public:
 
 	/**
 	* @brief Sobrecarga del operador >>
-	* Lee la sopa de letras a partir de un fichero. Comprueba que todas las palabras son aptas para introducir.
-	* Esto significa que si dos palabras se cruzan, ha de ser por una letra en común.
+	* Lee el diccionario a partir de un fichero.
 	* @param is el flujo de entrada
-	* @param sopa la referencia al objeto que llama al método
+	* @param diccionario la referencia al objeto que llama al método
 	*/
 	friend istream & operator>>(istream & is, Diccionario & diccionario) {
 		string line;
@@ -129,12 +135,9 @@ public:
 			string definicion = line.substr(line.find(';')+1, line.size());
 			diccionario.set(palabra,definicion);
 		}
-
 		return is;
 	}
-
 };
-
 
 #include "../src/diccionario.cpp"
 #endif

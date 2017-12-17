@@ -14,7 +14,7 @@ template <class T>
 /**
   *  @brief T.D.A. Matriz Dispersa
   *
-  * Una instancia @e c del tipo de datos abstracto @c Matriz Dispersa es un array 1-d de tripletas 
+  * Una instancia @e c del tipo de datos abstracto @c Matriz Dispersa es un array 1-d de tripletas
   * formadas por: una fila, columna y un valor asociado.
   * Se representa:
   *
@@ -24,7 +24,7 @@ template <class T>
   * @include prueba.cpp
   *
   * @author Manuel Jiménez Bernal
-  * @date Octubre 2017
+  * @date Diciembre 2017
   */
 class Matriz_Dispersa{
 
@@ -38,7 +38,7 @@ class Matriz_Dispersa{
 	* @section faConjunto Función de abstracción
 	*
 	* Un objeto válido @e rep del TDA Matriz Dispersa representa a la estructura
-	* 
+	*
 	* rep.m[<0,0,'A'>,<0,1,'B'>..<i,j,'*'>]
 	*
 	*/

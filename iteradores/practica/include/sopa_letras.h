@@ -19,7 +19,7 @@ using namespace std;
 * @include prueba_sp.cpp
 *
 * @author Manuel Jiménez Bernal
-* @date Octubre 2017
+* @date Diciembre 2017
 */
 class Sopa_letras{
 	/**
@@ -61,7 +61,6 @@ public:
 	* @brief Obtiene el tamaño total de la matriz
 	*/
 	int size() { return matriz.size(); }
-
 	/**
 	* @brief Obtiene el titulo
 	*/
@@ -95,12 +94,20 @@ public:
 	* @brief Incluir una palabra en la lista de acertadas
 	* @param palabra La palabra a incluir
 	*/
-	void Poner_Acertada(string palabra,int i,int j,string dir){ palabras_acertadas.push_back(palabra); }		/**
+	void Poner_Acertada(string palabra,int i,int j,string dir){ palabras_acertadas.push_back(palabra); }
+	/**
 	* @brief Comprueba que la sucesión de letras que ha introducido corresponde a una palabra de la lista
 	* @param palabra La palabra que se quiere comprobar
 	*/
 	bool checkPalabraEnLista(string palabra);
 
+	/**
+	* @brief Añade una palabra a la sopa de letras si es posible
+	* @param i La fila en que se quiere introducir
+	* @param j La columna en que se quiere introducir
+	* @param palabra La palabra que se quiere introducir
+	* @param dir La dirección en que se quiere introducir
+	*/
 	void addPalabra(int i,int j,string palabra,string dir);
 
 	/**
