@@ -23,7 +23,7 @@ $(OBJ)/prueba_sopa_letras.o: $(SRC)/prueba_sopa_letras.cpp $(INC)/matriz_dispers
 $(BIN)/sp2: $(OBJ)/sp2.o
 	$(CXX) -o $(BIN)/sp2 $(OBJ)/sp2.o
 
-$(OBJ)/sp2.o: $(SRC)/sp2.cpp $(INC)/matriz_dispersa.h
+$(OBJ)/sp2.o: $(SRC)/sp2.cpp $(INC)/matriz_dispersa.h $(INC)/diccionario.h
 	$(CXX) $(CPPFLAGS)  $(SRC)/sp2.cpp -o  $(OBJ)/sp2.o
 
 $(BIN)/prueba_matriz_dispersa: $(OBJ)/prueba_matriz_dispersa.o

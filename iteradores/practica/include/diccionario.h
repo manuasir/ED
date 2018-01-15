@@ -10,20 +10,20 @@
 using namespace std;
 
 /**
-  *  @brief T.D.A. Diccionario
-  *
-  * Una instancia @e c del tipo de datos abstracto @c Sopa de Letras contiene un conjunto de palabras
-  * dispuesto en la direcciones verticales, horizontal o diagonal en una matriz dispersa.
-  * Se representa:
-  *
-  * [{fila1,columna1,letra},...,{filaN,columnaN,valorN}]
-  *
-  * Un ejemplo de su uso:
-  * @include prueba_sp.cpp
-  *
-  * @author Manuel Jiménez Bernal
-  * @date Octubre 2017
-  */
+*  @brief T.D.A. Diccionario
+*
+* Una instancia @e c del tipo de datos abstracto @c Diccionario contiene un conjunto clave-valor de palabras
+* con sus significados asociados.
+* Se representa:
+*
+* key : [values]
+*
+* Un ejemplo de su uso:
+* @include pruebadiccionario.cpp
+*
+* @author Manuel Jiménez Bernal
+* @date Diciembre 2017
+*/
 class Diccionario{
 
 	/**
@@ -31,112 +31,113 @@ class Diccionario{
 	*
 	* @section invConjunto Invariante de la representación
 	*
-	* El invariante es \e rep.matriz.size() > 0
+	* El invariante es \e rep.diccionario.size() > 0
 	*
 	* @section faConjunto Función de abstracción
 	*
-	* Un objeto válido @e rep del TDA Sopa de letras representa a la estructura
+	* Un objeto válido @e rep del TDA Diccionario representa a la estructura
 	*
-	* rep.matriz[<0,0,'V'>,<0,1,'A'>..<i,j,'*'>]
+	* rep.diccionario[key] = [value1,value2,...,valueN]
 	*
 	*/
 
-	private:
-	map<string,vector<string> > diccionario;
-	public:
-		/**
-		* @brief Constructor
-		* Crea un objeto de la clase Diccionario
-		*/
-		Diccionario(){};
-		class iterator;
+private:
+	map<string,vector<string> > diccionario; /**< el mapa en que se almacena el diccionario */
+public:
+	/**
+	* @brief Constructor
+	* Crea un objeto de la clase Diccionario
+	*/
+	Diccionario(){};
 
-		iterator begin(){
-			iterator i;
-			i.it=diccionario.begin();
-			return i;
-		}
+	class iterator; /**< pre-declaración de la clase iteradora sobre el diccionario */
 
-		iterator end(){
-			iterator i;
-			i.it=diccionario.end();
-			return i;
-		}
+	/**
+	* @brief Devuelve la primera palabra del Diccionario
+	* @return iterator devuelve una instancia de iterador de la clase Diccionario
+	*/
+	iterator begin(){
+		iterator i;
+		i.it=diccionario.begin();
+		return i;
+	}
+	/**
+	* @brief Devuelve la última palabra del diccionario
+	* @return iterator devuelve una instancia de iterador de la clase Diccionario
+	*/
+	iterator end(){
+		iterator i;
+		i.it=diccionario.end();
+		return i;
+	}
 
-		void set(string key,string value){
-			diccionario[key].push_back(value);
-		}
+	/**
+	* @brief Inserta una nueva palabra con su significado, si existiera añade un nuevo significado a esa clave
+	*/
+	void set(string key,string value){
+		diccionario[key].push_back(value);
+	}
 
-		vector<string> get(string key){
-			return diccionario[key];
-		}
+	/**
+	* @brief Devuelve significados
+	* @param key la palabra de la cual se quiere extraer los significados
+	* @return devuelve los significados de esa palabra
+	*/
+	vector<string> get(string key){
+		return diccionario[key];
+	}
+	/**
+	* @brief Crea un diccionario a partir de otro
+	* @param key la palabra de la cual se quiere generar un diccionario
+	* @return nuevo diccionario
+	*/
+	Diccionario ObtainPalabrasconDeficionContiene(string key);
+	//class iterator;
+	class iterator{
+		private:
+			map<string,vector<string> >::iterator it;
+		public:
+			iterator(){};
+			pair<string,vector<string>> operator*(){ return *it; }
+			iterator & operator++(){ ++it; return *this; }
+			bool operator!=(const iterator & i){ return i.it!=it; }
+			bool operator==(const iterator & i){ return i.it==it; }
+			friend class Diccionario;
+	};
 
-		Diccionario ObtainPalabrasconDeficionContiene(string key){
-			Diccionario aux;
-			iterator ite;
-			for(ite=begin();ite!=end();++ite){
-				for(int i = 0;i<int((*ite).second.size());i++){
-					if ((*ite).second[i].find(key) != std::string::npos) {
-						// cout << (*ite).second[i] << endl;
-					    aux.set((*ite).first,(*ite).second[i]);
-					}
-				}
+	/**
+	* @brief Sobrecarga del operador <<
+	* Imprime el diccionario
+	* @param s el flujo de salida
+	* @param diccionario la referencia al objeto que llama al método
+	*/
+	friend ostream & operator<<(ostream & s, Diccionario & diccionario){
+		Diccionario::iterator ite;
+		for(ite=diccionario.begin();ite!=diccionario.end();++ite){
+			s << "palabra: " << (*ite).first << endl;
+			for(int i = 0;i<int((*ite).second.size());i++){
+				s << "definición : " << (*ite).second[i] << endl;
 			}
-
-			return aux;
 		}
+		return s;
+	}
 
-		//class iterator;
-		class iterator{
-			private:
-				map<string,vector<string> >::iterator it;
-			public:
-				iterator(){};
-				pair<string,vector<string>> operator*(){ return *it; }
-				iterator & operator++(){ ++it; return *this; }
-				bool operator!=(const iterator & i){ return i.it!=it; }
-				bool operator==(const iterator & i){ return i.it==it; }
-
-				friend class Diccionario;
-		};
-
-		/**
-		* @brief Sobrecarga del operador <<
-		* Imprime la sopa de letras
-		* @param s el flujo de salida
-		* @param sopa la referencia al objeto que llama al método
-		*/
-		friend ostream & operator<<(ostream & s, Diccionario & diccionario){
-			Diccionario::iterator ite;
-			for(ite=diccionario.begin();ite!=diccionario.end();++ite){
-				s << "palabra: " << (*ite).first << endl;
-				for(int i = 0;i<int((*ite).second.size());i++){
-					s << "definición : " << (*ite).second[i] << endl;
-				}
-			}
-			return s;
+	/**
+	* @brief Sobrecarga del operador >>
+	* Lee el diccionario a partir de un fichero.
+	* @param is el flujo de entrada
+	* @param diccionario la referencia al objeto que llama al método
+	*/
+	friend istream & operator>>(istream & is, Diccionario & diccionario) {
+		string line;
+		while (getline(is, line)) {
+			string palabra = line.substr(0, line.find(';'));
+			string definicion = line.substr(line.find(';')+1, line.size());
+			diccionario.set(palabra,definicion);
 		}
-
-		/**
-		* @brief Sobrecarga del operador >>
-		* Lee la sopa de letras a partir de un fichero. Comprueba que todas las palabras son aptas para introducir.
-		* Esto significa que si dos palabras se cruzan, ha de ser por una letra en común.
-		* @param is el flujo de entrada
-		* @param sopa la referencia al objeto que llama al método
-		*/
-		friend istream & operator>>(istream & is, Diccionario & diccionario) {
-			string line;
-			while (getline(is, line)) {
-				string palabra = line.substr(0, line.find(';'));
-				string definicion = line.substr(line.find(';')+1, line.size());
-				diccionario.set(palabra,definicion);
-			}
-
-		    return is;
-		}
-
+		return is;
+	}
 };
-
 
 #include "../src/diccionario.cpp"
 #endif
